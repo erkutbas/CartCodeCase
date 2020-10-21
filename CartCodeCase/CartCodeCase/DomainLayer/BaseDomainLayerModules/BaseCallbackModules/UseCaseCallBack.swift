@@ -7,12 +7,15 @@
 
 import Foundation
 
+typealias Completed = () -> Void
+
 class UseCaseCallBack<T>: UseCaseCallBackInteractor {
     typealias Response = T
     
     var onSuccessCompletion: ((T) -> Void)?
     var onErrorCompletion: ((ErrorResponse) -> Void)?
     var onCallBackResultCompletion: ((Result<T, ErrorResponse>) -> Void)?
+    var completed: Completed?
 
     func onSuccess(response: T) {
         onSuccessCompletion?(response)

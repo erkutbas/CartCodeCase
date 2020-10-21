@@ -10,5 +10,6 @@ import Foundation
 protocol CartOperationsRepositoryInterface {
     
     func getCartList(params: CartListRequest, completion: @escaping (Result<CartListResponse, ErrorResponse>) -> Void)
+    func saveToCoreData(cartList: Array<Product>)
     
 }

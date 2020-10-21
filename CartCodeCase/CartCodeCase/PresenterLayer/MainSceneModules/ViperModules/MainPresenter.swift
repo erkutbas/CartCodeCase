@@ -45,6 +45,22 @@ final class MainPresenter {
             print("cartList error : \(error)")
         case .success(let data):
             print("cartList data : \(data)")
+            sendResponseToCoreData(response: data)
+        }
+    }
+    
+    private func sendResponseToCoreData(response: CartListResponse) {
+        guard let data = response.products else { return }
+        interactor.saveToCoreData(data: data)
+    }
+    
+    private func checkCoreData() {
+        let data = CoreDataManager.shared.fetch(CartListEntity.self)
+        print("data count : \(data.count)")
+        for item in data {
+            print("takasi : \(item.productId)")
+            print("takasi : \(item.name)")
+            print("takasi : \(item.productDescription)")
         }
     }
     
@@ -55,6 +71,7 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterInterface {
     
     func viewDidLoad() {
+        //checkCoreData()
         getCartList()
     }
     

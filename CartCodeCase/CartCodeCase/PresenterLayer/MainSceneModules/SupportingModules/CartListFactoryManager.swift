@@ -9,8 +9,15 @@ import Foundation
 
 class CartListFactoryManager {
     
-    func createUseCase() -> CartListUseCase {
-        return CartListUseCase(repository: CartOperationsRepository(remote: CartOperationsApiRemote(apiManager: APIManager.shared, serviceProvider: CartOperationService())))
+    private lazy var apiRemote = CartOperationsApiRemote(apiManager: APIManager.shared, serviceProvider: CartOperationService())
+    private lazy var repository = CartOperationsRepository(remote: apiRemote, coreData: CartOperationsCoreDataManager(coreDataManager: CoreDataManager.shared))
+    
+    func createCartListUseCase() -> CartListUseCase {
+        return CartListUseCase(repository: repository)
+    }
+    
+    func createCartListSaveUseCase() -> CartListSaveUseCase {
+        return CartListSaveUseCase(repository: repository)
     }
     
 }

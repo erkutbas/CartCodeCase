@@ -17,21 +17,28 @@ class CartListResponse: BaseResponse {
 }
 
 // MARK: - Product
-class Product: CodableDataProtocol {
+class Product: CodableDataProtocol, ProductImageProtocol {
     let productID: String?
     let name: String?
-    let price: Int?
+    let price: Double?
     let image: String?
+    
+    var imageData: Data?
 
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"
         case name, price, image
     }
 
-    init(productID: String?, name: String?, price: Int?, image: String?) {
+    init(productID: String?, name: String?, price: Double?, image: String?) {
         self.productID = productID
         self.name = name
         self.price = price
         self.image = image
     }
+    
+}
+
+protocol ProductImageProtocol {
+    var imageData: Data? { get set }
 }
