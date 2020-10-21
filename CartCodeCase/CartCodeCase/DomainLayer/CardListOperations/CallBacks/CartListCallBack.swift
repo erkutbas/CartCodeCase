@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CardListCallBack: UseCaseCallBack<CartListResponse> {
+class CartListCallBack: UseCaseCallBack<CartListResponse> {
     
     
     

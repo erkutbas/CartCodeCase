@@ -9,13 +9,19 @@ import Foundation
 
 class CartOperationsApiRemote: CartOperationsApiRemoteInterface {
     
+    private let apiManager: APIManagerInterface!
+    private let serviceProvider: CartOperationService!
+    
+    public init(apiManager: APIManagerInterface, serviceProvider: CartOperationService) {
+        self.apiManager = apiManager
+        self.serviceProvider = serviceProvider
+    }
+    
     func getCartList(params: CartListRequest, completion: @escaping (Result<CartListResponse, ErrorResponse>) -> Void) {
-        
-        let serviceProvider = CartOperationService()
         
         do {
             let request = try serviceProvider.getCartListServiceModule(request: params).returnUrlRequest()
-            APIManager.shared.executeRequest(urlRequest: request, completion: completion)
+            apiManager.executeRequest(urlRequest: request, completion: completion)
         } catch let error {
             print("error : \(error)")
         }

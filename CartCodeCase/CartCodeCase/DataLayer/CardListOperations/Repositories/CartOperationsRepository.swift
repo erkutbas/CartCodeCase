@@ -9,7 +9,12 @@ import Foundation
 
 class CartOperationsRepository: CartOperationsRepositoryInterface {
 
-    private let remote = CartOperationsApiRemote()
+    private let remote: CartOperationsApiRemoteInterface!
+//    private let remote = CartOperationsApiRemote()
+    
+    public init(remote: CartOperationsApiRemoteInterface) {
+        self.remote = remote
+    }
     
     func getCartList(params: CartListRequest, completion: @escaping (Result<CartListResponse, ErrorResponse>) -> Void) {
         remote.getCartList(params: params, completion: completion)
