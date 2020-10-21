@@ -21,7 +21,11 @@ final class MainInteractor {
 extension MainInteractor: MainInteractorInterface {
     
     func getCartListData(parameters: CartListRequest, callBack: CartListCallBack) {
-        cartListFactory.createUseCase().execute(useCaseCallBack: callBack, params: parameters)
+        cartListFactory.createCartListUseCase().execute(useCaseCallBack: callBack, params: parameters)
+    }
+
+    func saveToCoreData(data: Array<Product>) {
+        cartListFactory.createCartListSaveUseCase().execute(params: data)
     }
     
 }
