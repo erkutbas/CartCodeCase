@@ -12,6 +12,9 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    private let takasi = CartListUseCase()
+    private let callBack = CardListCallBack()
+
     // MARK: - Public properties -
 
     var presenter: MainPresenterInterface!
@@ -22,6 +25,18 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .red
+        
+        callBack.commonResult { [weak self](result) in
+            switch result {
+            case .failure(let error):
+                print("error : \(error)")
+            case .success(let data):
+                print("data : \(data.products)")
+            }
+        }
+        
+        takasi.execute(useCaseCallBack: callBack, params: CartListRequest())
+        
     }
 
 }
