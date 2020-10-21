@@ -13,20 +13,20 @@ import UIKit
 final class MainViewController: UIViewController {
 
     // MARK: - Public properties -
-
     var presenter: MainPresenterInterface!
 
     // MARK: - Lifecycle -
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .red
+
+        presenter.viewDidLoad()
+        
     }
 
 }
 
 // MARK: - Extensions -
-
 extension MainViewController: MainViewInterface {
 }

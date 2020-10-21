@@ -18,6 +18,8 @@ final class MainPresenter {
     private let formatter: MainFormatterInterface
     private let interactor: MainInteractorInterface
     private let wireframe: MainWireframeInterface
+    
+    private var callBack = CartListCallBack()
 
     // MARK: - Lifecycle -
 
@@ -27,9 +29,33 @@ final class MainPresenter {
         self.interactor = interactor
         self.wireframe = wireframe
     }
+    
+    private func getCartList() {
+        callBack.commonResult(completion: cartListResponseListener)
+        interactor.getCartListData(parameters: CartListRequest(), callBack: callBack)
+    }
+    
+    private lazy var cartListResponseListener: (Result<CartListResponse, ErrorResponse>) -> Void = { [weak self] result in
+        self?.handleCartListResponse(with: result)
+    }
+    
+    private func handleCartListResponse(with result: Result<CartListResponse, ErrorResponse>) {
+        switch result {
+        case .failure(let error):
+            print("cartList error : \(error)")
+        case .success(let data):
+            print("cartList data : \(data)")
+        }
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension MainPresenter: MainPresenterInterface {
+    
+    func viewDidLoad() {
+        getCartList()
+    }
+    
 }

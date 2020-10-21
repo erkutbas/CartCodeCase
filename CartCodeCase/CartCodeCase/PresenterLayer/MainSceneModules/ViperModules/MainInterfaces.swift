@@ -23,4 +23,5 @@ protocol MainFormatterInterface: FormatterInterface {
 }
 
 protocol MainInteractorInterface: InteractorInterface {
+    func getCartListData(parameters: CartListRequest, callBack: CartListCallBack)
 }

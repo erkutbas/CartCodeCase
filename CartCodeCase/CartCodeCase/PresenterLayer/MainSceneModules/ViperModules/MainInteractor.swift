@@ -11,9 +11,17 @@
 import Foundation
 
 final class MainInteractor {
+    
+    private var cartListFactory = CartListFactoryManager()
+    
 }
 
 // MARK: - Extensions -
 
 extension MainInteractor: MainInteractorInterface {
+    
+    func getCartListData(parameters: CartListRequest, callBack: CartListCallBack) {
+        cartListFactory.createUseCase().execute(useCaseCallBack: callBack, params: parameters)
+    }
+    
 }
