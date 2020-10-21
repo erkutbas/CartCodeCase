@@ -36,6 +36,27 @@
 		A78A8E222540E2D800C3B282 /* ImageCacheFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E212540E2D800C3B282 /* ImageCacheFactoryManager.swift */; };
 		A78A8E272540E2EF00C3B282 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E262540E2EF00C3B282 /* ImageCacheManager.swift */; };
 		A78A8E2C2540E36000C3B282 /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */; };
+		A78A8E572540EA2300C3B282 /* BaseDynamicAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E562540EA2300C3B282 /* BaseDynamicAttributedLabel.swift */; };
+		A78A8E5C2540EA7000C3B282 /* DynamicLabelDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E5B2540EA7000C3B282 /* DynamicLabelDataProtocol.swift */; };
+		A78A8E622540ED5100C3B282 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E612540ED5100C3B282 /* FontManager.swift */; };
+		A78A8E732540EDB300C3B282 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E672540EDB300C3B282 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		A78A8E742540EDB300C3B282 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E682540EDB300C3B282 /* SourceSansPro-SemiBold.ttf */; };
+		A78A8E752540EDB300C3B282 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E692540EDB300C3B282 /* SourceSansPro-Italic.ttf */; };
+		A78A8E762540EDB300C3B282 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6A2540EDB300C3B282 /* SourceSansPro-Bold.ttf */; };
+		A78A8E772540EDB300C3B282 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6B2540EDB300C3B282 /* SourceSansPro-ExtraLightItalic.ttf */; };
+		A78A8E782540EDB300C3B282 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6C2540EDB300C3B282 /* SourceSansPro-Black.ttf */; };
+		A78A8E792540EDB300C3B282 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6D2540EDB300C3B282 /* SourceSansPro-Light.ttf */; };
+		A78A8E7A2540EDB300C3B282 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6E2540EDB300C3B282 /* SourceSansPro-ExtraLight.ttf */; };
+		A78A8E7B2540EDB300C3B282 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E6F2540EDB300C3B282 /* SourceSansPro-BoldItalic.ttf */; };
+		A78A8E7C2540EDB300C3B282 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E702540EDB300C3B282 /* SourceSansPro-LightItalic.ttf */; };
+		A78A8E7D2540EDB300C3B282 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E712540EDB300C3B282 /* SourceSansPro-Regular.ttf */; };
+		A78A8E7E2540EDB300C3B282 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E722540EDB300C3B282 /* SourceSansPro-BlackItalic.ttf */; };
+		A78A8E882540EE3E00C3B282 /* PriceInfoLabelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E862540EE3E00C3B282 /* PriceInfoLabelData.swift */; };
+		A78A8E892540EE3E00C3B282 /* PriceInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E872540EE3E00C3B282 /* PriceInfoLabel.swift */; };
+		A78A8E922540EE9300C3B282 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A78A8E942540EE9300C3B282 /* Localizable.strings */; };
+		A78A8E9F2540EF5C00C3B282 /* LocalizableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E9E2540EF5C00C3B282 /* LocalizableManager.swift */; };
+		A78A8EAA2540F10F00C3B282 /* ProductNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8EA92540F10F00C3B282 /* ProductNameLabel.swift */; };
+		A78A8EAF2540F13900C3B282 /* ProductNameLabelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8EAE2540F13900C3B282 /* ProductNameLabelData.swift */; };
 		A7A1694D253F88AB00D74BF0 /* CartOperationsApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1694C253F88AB00D74BF0 /* CartOperationsApiRemote.swift */; };
 		A7A16952253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A16951253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift */; };
 		A7A16958253F89A300D74BF0 /* CartListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A16957253F89A300D74BF0 /* CartListResponse.swift */; };
@@ -169,6 +190,28 @@
 		A78A8E212540E2D800C3B282 /* ImageCacheFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheFactoryManager.swift; sourceTree = "<group>"; };
 		A78A8E262540E2EF00C3B282 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
+		A78A8E562540EA2300C3B282 /* BaseDynamicAttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDynamicAttributedLabel.swift; sourceTree = "<group>"; };
+		A78A8E5B2540EA7000C3B282 /* DynamicLabelDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLabelDataProtocol.swift; sourceTree = "<group>"; };
+		A78A8E612540ED5100C3B282 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		A78A8E672540EDB300C3B282 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A78A8E682540EDB300C3B282 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		A78A8E692540EDB300C3B282 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
+		A78A8E6A2540EDB300C3B282 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		A78A8E6B2540EDB300C3B282 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		A78A8E6C2540EDB300C3B282 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		A78A8E6D2540EDB300C3B282 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		A78A8E6E2540EDB300C3B282 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A78A8E6F2540EDB300C3B282 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A78A8E702540EDB300C3B282 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		A78A8E712540EDB300C3B282 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		A78A8E722540EDB300C3B282 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		A78A8E862540EE3E00C3B282 /* PriceInfoLabelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceInfoLabelData.swift; sourceTree = "<group>"; };
+		A78A8E872540EE3E00C3B282 /* PriceInfoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceInfoLabel.swift; sourceTree = "<group>"; };
+		A78A8E932540EE9300C3B282 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A78A8E982540EEB800C3B282 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A78A8E9E2540EF5C00C3B282 /* LocalizableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableManager.swift; sourceTree = "<group>"; };
+		A78A8EA92540F10F00C3B282 /* ProductNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameLabel.swift; sourceTree = "<group>"; };
+		A78A8EAE2540F13900C3B282 /* ProductNameLabelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNameLabelData.swift; sourceTree = "<group>"; };
 		A7A1694C253F88AB00D74BF0 /* CartOperationsApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperationsApiRemote.swift; sourceTree = "<group>"; };
 		A7A16951253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperationsApiRemoteInterface.swift; sourceTree = "<group>"; };
 		A7A16957253F89A300D74BF0 /* CartListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListResponse.swift; sourceTree = "<group>"; };
@@ -273,6 +316,8 @@
 		A766F263253FA4B400CE168F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A78A8E9C2540EF3700C3B282 /* LocalizableManagers */,
+				A78A8E602540ED4400C3B282 /* FontManager */,
 				A78A8DED2540C69D00C3B282 /* FactoryManagers */,
 				A766F2C02540A1FD00CE168F /* DependencyModules */,
 				A766F26A253FA4FD00CE168F /* Constants */,
@@ -348,6 +393,7 @@
 		A78A8E1A2540E29700C3B282 /* UserInterfaceComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A78A8E542540EA0400C3B282 /* BaseComponents */,
 				A78A8E1B2540E29E00C3B282 /* CustomImageViewComponent */,
 			);
 			path = UserInterfaceComponents;
@@ -360,6 +406,71 @@
 				A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */,
 			);
 			path = CustomImageViewComponent;
+			sourceTree = "<group>";
+		};
+		A78A8E542540EA0400C3B282 /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E852540EE3200C3B282 /* AttributedComponents */,
+				A78A8E552540EA0B00C3B282 /* BaseAttrıbutedLabel */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		A78A8E552540EA0B00C3B282 /* BaseAttrıbutedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E562540EA2300C3B282 /* BaseDynamicAttributedLabel.swift */,
+				A78A8E5B2540EA7000C3B282 /* DynamicLabelDataProtocol.swift */,
+			);
+			path = "BaseAttrıbutedLabel";
+			sourceTree = "<group>";
+		};
+		A78A8E602540ED4400C3B282 /* FontManager */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E612540ED5100C3B282 /* FontManager.swift */,
+				A78A8E662540EDA600C3B282 /* Source_Sans_Pro */,
+			);
+			path = FontManager;
+			sourceTree = "<group>";
+		};
+		A78A8E662540EDA600C3B282 /* Source_Sans_Pro */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E6C2540EDB300C3B282 /* SourceSansPro-Black.ttf */,
+				A78A8E722540EDB300C3B282 /* SourceSansPro-BlackItalic.ttf */,
+				A78A8E6A2540EDB300C3B282 /* SourceSansPro-Bold.ttf */,
+				A78A8E6F2540EDB300C3B282 /* SourceSansPro-BoldItalic.ttf */,
+				A78A8E6E2540EDB300C3B282 /* SourceSansPro-ExtraLight.ttf */,
+				A78A8E6B2540EDB300C3B282 /* SourceSansPro-ExtraLightItalic.ttf */,
+				A78A8E692540EDB300C3B282 /* SourceSansPro-Italic.ttf */,
+				A78A8E6D2540EDB300C3B282 /* SourceSansPro-Light.ttf */,
+				A78A8E702540EDB300C3B282 /* SourceSansPro-LightItalic.ttf */,
+				A78A8E712540EDB300C3B282 /* SourceSansPro-Regular.ttf */,
+				A78A8E682540EDB300C3B282 /* SourceSansPro-SemiBold.ttf */,
+				A78A8E672540EDB300C3B282 /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = Source_Sans_Pro;
+			sourceTree = "<group>";
+		};
+		A78A8E852540EE3200C3B282 /* AttributedComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E872540EE3E00C3B282 /* PriceInfoLabel.swift */,
+				A78A8E862540EE3E00C3B282 /* PriceInfoLabelData.swift */,
+				A78A8EA92540F10F00C3B282 /* ProductNameLabel.swift */,
+				A78A8EAE2540F13900C3B282 /* ProductNameLabelData.swift */,
+			);
+			path = AttributedComponents;
+			sourceTree = "<group>";
+		};
+		A78A8E9C2540EF3700C3B282 /* LocalizableManagers */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E9E2540EF5C00C3B282 /* LocalizableManager.swift */,
+			);
+			path = LocalizableManagers;
 			sourceTree = "<group>";
 		};
 		A7A16956253F899500D74BF0 /* Models */ = {
@@ -458,6 +569,7 @@
 				A7E5E239253F4EE600236C55 /* LaunchScreen.storyboard */,
 				A7E5E23C253F4EE600236C55 /* Info.plist */,
 				A7E5E234253F4EE500236C55 /* CartCodeCase.xcdatamodeld */,
+				A78A8E942540EE9300C3B282 /* Localizable.strings */,
 			);
 			path = CartCodeCase;
 			sourceTree = "<group>";
@@ -786,6 +898,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = A7E5E21F253F4EE500236C55;
 			productRefGroup = A7E5E229253F4EE500236C55 /* Products */;
@@ -804,10 +917,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78A8E922540EE9300C3B282 /* Localizable.strings in Resources */,
+				A78A8E7E2540EDB300C3B282 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				A78A8E7A2540EDB300C3B282 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				A7E5E23B253F4EE600236C55 /* LaunchScreen.storyboard in Resources */,
+				A78A8E732540EDB300C3B282 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				A78A8E792540EDB300C3B282 /* SourceSansPro-Light.ttf in Resources */,
 				A7E5E238253F4EE600236C55 /* Assets.xcassets in Resources */,
+				A78A8E7D2540EDB300C3B282 /* SourceSansPro-Regular.ttf in Resources */,
+				A78A8E742540EDB300C3B282 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A7E5E284253F5A8600236C55 /* Main.storyboard in Resources */,
+				A78A8E7C2540EDB300C3B282 /* SourceSansPro-LightItalic.ttf in Resources */,
+				A78A8E752540EDB300C3B282 /* SourceSansPro-Italic.ttf in Resources */,
 				A7E5E2B7253F5BF600236C55 /* Detail.storyboard in Resources */,
+				A78A8E762540EDB300C3B282 /* SourceSansPro-Bold.ttf in Resources */,
+				A78A8E782540EDB300C3B282 /* SourceSansPro-Black.ttf in Resources */,
+				A78A8E772540EDB300C3B282 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				A78A8E7B2540EDB300C3B282 /* SourceSansPro-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +962,7 @@
 			files = (
 				A7A169C2253F997B00D74BF0 /* NetworkError.swift in Sources */,
 				A7A169A7253F990300D74BF0 /* ParameterEncoding.swift in Sources */,
+				A78A8E5C2540EA7000C3B282 /* DynamicLabelDataProtocol.swift in Sources */,
 				A7E5E2D6253F606400236C55 /* APIManager.swift in Sources */,
 				A766F2CF2540A24200CE168F /* Resolver.swift in Sources */,
 				A7E5E2C3253F5BF600236C55 /* DetailWireframe.swift in Sources */,
@@ -859,6 +986,7 @@
 				A766F2B9253FACD700CE168F /* CartOperationService.swift in Sources */,
 				A7E5E28A253F5A8600236C55 /* MainViewController.swift in Sources */,
 				A766F25C253FA47300CE168F /* Encodable+Extensions.swift in Sources */,
+				A78A8EAA2540F10F00C3B282 /* ProductNameLabel.swift in Sources */,
 				A7E5E2BF253F5BF600236C55 /* DetailFormatter.swift in Sources */,
 				A7A1694D253F88AB00D74BF0 /* CartOperationsApiRemote.swift in Sources */,
 				A7E5E271253F52C100236C55 /* FormatterInterface.swift in Sources */,
@@ -873,6 +1001,9 @@
 				A7E5E2BD253F5BF600236C55 /* DetailViewController.swift in Sources */,
 				A7E5E307253F6DC700236C55 /* ApiConnectionErrorType.swift in Sources */,
 				A7A1696D253F8B9600D74BF0 /* SingleResponseUseCase.swift in Sources */,
+				A78A8EAF2540F13900C3B282 /* ProductNameLabelData.swift in Sources */,
+				A78A8E9F2540EF5C00C3B282 /* LocalizableManager.swift in Sources */,
+				A78A8E572540EA2300C3B282 /* BaseDynamicAttributedLabel.swift in Sources */,
 				A766F2C22540A20800CE168F /* Injection.swift in Sources */,
 				A78A8E102540D01800C3B282 /* CompletableUseCase.swift in Sources */,
 				A766F2CA2540A22800CE168F /* Component.swift in Sources */,
@@ -887,14 +1018,17 @@
 				A7E5E305253F6DC700236C55 /* ErrorResponse.swift in Sources */,
 				A78A8E222540E2D800C3B282 /* ImageCacheFactoryManager.swift in Sources */,
 				A78A8E0B2540CFC300C3B282 /* CartListSaveUseCase.swift in Sources */,
+				A78A8E882540EE3E00C3B282 /* PriceInfoLabelData.swift in Sources */,
 				A7E5E32E253F73F100236C55 /* CartOperationsRepositoryInterface.swift in Sources */,
 				A7A169A9253F990300D74BF0 /* JSONParameterEncoder.swift in Sources */,
 				A766F28E253FA7D200CE168F /* HTTPHeaderFields.swift in Sources */,
 				A78A8E1D2540E2B200C3B282 /* CustomImageViewComponent.swift in Sources */,
 				A766F2A8253FAA3000CE168F /* URLRequest+Extensions.swift in Sources */,
 				A7E5E270253F52C100236C55 /* InteractorInterface.swift in Sources */,
+				A78A8E892540EE3E00C3B282 /* PriceInfoLabel.swift in Sources */,
 				A7E5E22C253F4EE500236C55 /* AppDelegate.swift in Sources */,
 				A7E5E2BB253F5BF600236C55 /* DetailPresenter.swift in Sources */,
+				A78A8E622540ED5100C3B282 /* FontManager.swift in Sources */,
 				A766F27C253FA62100CE168F /* APIServiceProvider.swift in Sources */,
 				A7A1697D253F8C5500D74BF0 /* BaseRequest.swift in Sources */,
 				A78A8E2C2540E36000C3B282 /* CustomImageViewComponentData.swift in Sources */,
@@ -974,6 +1108,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A78A8E942540EE9300C3B282 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A78A8E932540EE9300C3B282 /* en */,
+				A78A8E982540EEB800C3B282 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A7E5E239253F4EE600236C55 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -989,6 +1132,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1050,6 +1194,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

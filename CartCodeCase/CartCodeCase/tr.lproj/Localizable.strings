@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  CartCodeCase
+
+  Created by Erkut Bas on 22.10.2020.
+  
+*/
+
+"productName" = "Ürün adı";
+"productPrice" = "Ücret";
+"productDescription" = "Açıklama";
