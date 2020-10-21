@@ -32,6 +32,10 @@
 		A78A8DFD2540C85400C3B282 /* CartOperationsCoreDataManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8DFC2540C85400C3B282 /* CartOperationsCoreDataManagerInterface.swift */; };
 		A78A8E0B2540CFC300C3B282 /* CartListSaveUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E0A2540CFC300C3B282 /* CartListSaveUseCase.swift */; };
 		A78A8E102540D01800C3B282 /* CompletableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E0F2540D01800C3B282 /* CompletableUseCase.swift */; };
+		A78A8E1D2540E2B200C3B282 /* CustomImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E1C2540E2B200C3B282 /* CustomImageViewComponent.swift */; };
+		A78A8E222540E2D800C3B282 /* ImageCacheFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E212540E2D800C3B282 /* ImageCacheFactoryManager.swift */; };
+		A78A8E272540E2EF00C3B282 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E262540E2EF00C3B282 /* ImageCacheManager.swift */; };
+		A78A8E2C2540E36000C3B282 /* CustomImageViewComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */; };
 		A7A1694D253F88AB00D74BF0 /* CartOperationsApiRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A1694C253F88AB00D74BF0 /* CartOperationsApiRemote.swift */; };
 		A7A16952253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A16951253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift */; };
 		A7A16958253F89A300D74BF0 /* CartListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A16957253F89A300D74BF0 /* CartListResponse.swift */; };
@@ -161,6 +165,10 @@
 		A78A8DFC2540C85400C3B282 /* CartOperationsCoreDataManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperationsCoreDataManagerInterface.swift; sourceTree = "<group>"; };
 		A78A8E0A2540CFC300C3B282 /* CartListSaveUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListSaveUseCase.swift; sourceTree = "<group>"; };
 		A78A8E0F2540D01800C3B282 /* CompletableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletableUseCase.swift; sourceTree = "<group>"; };
+		A78A8E1C2540E2B200C3B282 /* CustomImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponent.swift; sourceTree = "<group>"; };
+		A78A8E212540E2D800C3B282 /* ImageCacheFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheFactoryManager.swift; sourceTree = "<group>"; };
+		A78A8E262540E2EF00C3B282 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageViewComponentData.swift; sourceTree = "<group>"; };
 		A7A1694C253F88AB00D74BF0 /* CartOperationsApiRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperationsApiRemote.swift; sourceTree = "<group>"; };
 		A7A16951253F88BC00D74BF0 /* CartOperationsApiRemoteInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperationsApiRemoteInterface.swift; sourceTree = "<group>"; };
 		A7A16957253F89A300D74BF0 /* CartListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListResponse.swift; sourceTree = "<group>"; };
@@ -278,6 +286,7 @@
 			children = (
 				A766F265253FA4CA00CE168F /* UtilityManager.swift */,
 				A78A8DE82540BA3900C3B282 /* CoreDataManager.swift */,
+				A78A8E262540E2EF00C3B282 /* ImageCacheManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A78A8DEE2540C6AE00C3B282 /* CoreDataFactoryManager.swift */,
+				A78A8E212540E2D800C3B282 /* ImageCacheFactoryManager.swift */,
 			);
 			path = FactoryManagers;
 			sourceTree = "<group>";
@@ -333,6 +343,23 @@
 				A78A8DF72540C84B00C3B282 /* CartOperationsCoreDataManager.swift */,
 			);
 			path = CoreDataModule;
+			sourceTree = "<group>";
+		};
+		A78A8E1A2540E29700C3B282 /* UserInterfaceComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E1B2540E29E00C3B282 /* CustomImageViewComponent */,
+			);
+			path = UserInterfaceComponents;
+			sourceTree = "<group>";
+		};
+		A78A8E1B2540E29E00C3B282 /* CustomImageViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				A78A8E1C2540E2B200C3B282 /* CustomImageViewComponent.swift */,
+				A78A8E2B2540E35F00C3B282 /* CustomImageViewComponentData.swift */,
+			);
+			path = CustomImageViewComponent;
 			sourceTree = "<group>";
 		};
 		A7A16956253F899500D74BF0 /* Models */ = {
@@ -419,6 +446,7 @@
 		A7E5E22A253F4EE500236C55 /* CartCodeCase */ = {
 			isa = PBXGroup;
 			children = (
+				A78A8E1A2540E29700C3B282 /* UserInterfaceComponents */,
 				A766F263253FA4B400CE168F /* Utilities */,
 				A7E5E279253F5A3E00236C55 /* PresenterLayer */,
 				A7E5E278253F5A3900236C55 /* DomainLayer */,
@@ -857,17 +885,21 @@
 				A7E5E290253F5A8600236C55 /* MainWireframe.swift in Sources */,
 				A78A8DFD2540C85400C3B282 /* CartOperationsCoreDataManagerInterface.swift in Sources */,
 				A7E5E305253F6DC700236C55 /* ErrorResponse.swift in Sources */,
+				A78A8E222540E2D800C3B282 /* ImageCacheFactoryManager.swift in Sources */,
 				A78A8E0B2540CFC300C3B282 /* CartListSaveUseCase.swift in Sources */,
 				A7E5E32E253F73F100236C55 /* CartOperationsRepositoryInterface.swift in Sources */,
 				A7A169A9253F990300D74BF0 /* JSONParameterEncoder.swift in Sources */,
 				A766F28E253FA7D200CE168F /* HTTPHeaderFields.swift in Sources */,
+				A78A8E1D2540E2B200C3B282 /* CustomImageViewComponent.swift in Sources */,
 				A766F2A8253FAA3000CE168F /* URLRequest+Extensions.swift in Sources */,
 				A7E5E270253F52C100236C55 /* InteractorInterface.swift in Sources */,
 				A7E5E22C253F4EE500236C55 /* AppDelegate.swift in Sources */,
 				A7E5E2BB253F5BF600236C55 /* DetailPresenter.swift in Sources */,
 				A766F27C253FA62100CE168F /* APIServiceProvider.swift in Sources */,
 				A7A1697D253F8C5500D74BF0 /* BaseRequest.swift in Sources */,
+				A78A8E2C2540E36000C3B282 /* CustomImageViewComponentData.swift in Sources */,
 				A7A1698B253F8DF900D74BF0 /* CartListCallBack.swift in Sources */,
+				A78A8E272540E2EF00C3B282 /* ImageCacheManager.swift in Sources */,
 				A78A8DEF2540C6AE00C3B282 /* CoreDataFactoryManager.swift in Sources */,
 				A7A169A8253F990300D74BF0 /* URLParameterEncoder.swift in Sources */,
 				A7E5E236253F4EE500236C55 /* CartCodeCase.xcdatamodeld in Sources */,

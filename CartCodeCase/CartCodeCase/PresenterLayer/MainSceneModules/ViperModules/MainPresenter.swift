@@ -71,7 +71,7 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterInterface {
     
     func viewDidLoad() {
-        //checkCoreData()
+        checkCoreData()
         getCartList()
     }
     
