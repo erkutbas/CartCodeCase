@@ -11,9 +11,48 @@
 import UIKit
 
 final class MainFormatter {
+    
+    private var cartListResponse: CartListResponse?
+    private var productViewComponentData = Array<GenericDataProtocol>()
+    
+    private func cartListComponentMapper() {
+
+        guard let response = cartListResponse, let data = response.products else { return }
+        
+        productViewComponentData.removeAll()
+        
+        productViewComponentData = data.map { (product) -> ProductViewComponentData in
+            
+            return ProductViewComponentData(productId: product.productID, imageData: CustomImageViewComponentData(imageUrl: product.image ?? ""), productInfoData: ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: product.name ?? ""), productPriceData: PriceInfoLabelData(price: product.price ?? 0.0)))
+            
+        }
+        
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension MainFormatter: MainFormatterInterface {
+    
+    func setData(with response: CartListResponse) {
+        self.cartListResponse = response
+        cartListComponentMapper()
+    }
+    
+    func returnNumberOfSection() -> Int {
+        return 1
+    }
+    
+    func returnNumberOfItems(in section: Int) -> Int {
+        return productViewComponentData.count
+    }
+    
+    func returnWidgetComponentItem(index: Int) -> GenericDataProtocol? {
+        return productViewComponentData[index]
+    }
+    
+    
+    
+    
 }

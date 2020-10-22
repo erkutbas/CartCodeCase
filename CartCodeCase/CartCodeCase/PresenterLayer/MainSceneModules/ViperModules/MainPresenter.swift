@@ -46,6 +46,8 @@ final class MainPresenter {
         case .success(let data):
             print("cartList data : \(data)")
             sendResponseToCoreData(response: data)
+            formatter.setData(with: data)
+            view.informViewToLoadData()
         }
     }
     
@@ -75,4 +77,19 @@ extension MainPresenter: MainPresenterInterface {
         getCartList()
     }
     
+    func getNumberOfSection() -> Int {
+        return formatter.returnNumberOfSection()
+    }
+    
+    func getNumberOfItems(in section: Int) -> Int {
+        return formatter.returnNumberOfItems(in: section)
+    }
+    
+    func getWidgetComponentItem(index: Int) -> GenericDataProtocol? {
+        return formatter.returnWidgetComponentItem(index: index)
+    }
+    
+    func fireProductDetailFlow(item: String?) {
+        print("item : \(item)")
+    }
 }

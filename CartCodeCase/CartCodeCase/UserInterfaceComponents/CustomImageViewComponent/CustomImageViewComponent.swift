@@ -44,7 +44,11 @@ class CustomImageViewComponent: UIImageView  {
         guard let data = data, let image = UIImage(data: data) else { return }
         
         if self.imageUrlString == imageUrl {
-            self.image = image
+            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve) { [weak self] in
+                self?.image = image
+            }
+
+//            self.image = image
         }
         
         setImageToCache(key: imageUrl, object: image)

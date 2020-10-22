@@ -10,23 +10,75 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: BaseViewController {
+    
+    private var cartListComponent: CartListComponent!
 
     // MARK: - Public properties -
     var presenter: MainPresenterInterface!
 
     // MARK: - Lifecycle -
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func prepareViewControllerConfigurations() {
+        super.prepareViewControllerConfigurations()
         
-        view.backgroundColor = .red
-
+        setupViewConfigurations()
+        addCartListComponent()
+        addCartListComponentListener()
+        
         presenter.viewDidLoad()
         
+    }
+    
+    private func setupViewConfigurations() {
+        view.backgroundColor = .white
+    }
+
+    private func addCartListComponent() {
+        cartListComponent = CartListComponent()
+        cartListComponent.translatesAutoresizingMaskIntoConstraints = false
+        cartListComponent.setComponent(delegate: self)
+        
+        view.addSubview(cartListComponent)
+        
+        NSLayoutConstraint.activate([
+        
+            cartListComponent.topAnchor.constraint(equalTo: view.safeTopAnchor),
+            cartListComponent.bottomAnchor.constraint(equalTo: view.safeBottomAnchor),
+            cartListComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cartListComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        
+        ])
+    }
+    
+    private func addCartListComponentListener() {
+        cartListComponent.subscribeSelectedCell { [weak self](data) in
+            self?.presenter.fireProductDetailFlow(item: data.itemId)
+        }
     }
 
 }
 
+// Mark: - CartListComponentDelegate -
+extension MainViewController: CartListComponentDelegate {
+    func getNumberOfSection() -> Int {
+        return presenter.getNumberOfSection()
+    }
+    
+    func getNumberOfItems(in section: Int) -> Int {
+        return presenter.getNumberOfItems(in: section)
+    }
+    
+    func getWidgetComponentItem(index: Int) -> GenericDataProtocol? {
+        return presenter.getWidgetComponentItem(index: index)
+    }
+    
+}
+
 // MARK: - Extensions -
 extension MainViewController: MainViewInterface {
+    
+    func informViewToLoadData() {
+        cartListComponent.reloadCollectionView()
+    }
+    
 }

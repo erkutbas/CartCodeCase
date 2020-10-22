@@ -14,12 +14,21 @@ protocol MainWireframeInterface: WireframeInterface {
 }
 
 protocol MainViewInterface: ViewInterface {
+    func informViewToLoadData()
 }
 
 protocol MainPresenterInterface: PresenterInterface {
+    func getNumberOfSection() -> Int
+    func getNumberOfItems(in section: Int) -> Int
+    func getWidgetComponentItem(index: Int) -> GenericDataProtocol?
+    func fireProductDetailFlow(item: String?)
 }
 
 protocol MainFormatterInterface: FormatterInterface {
+    func setData(with response: CartListResponse)
+    func returnNumberOfSection() -> Int
+    func returnNumberOfItems(in section: Int) -> Int
+    func returnWidgetComponentItem(index: Int) -> GenericDataProtocol?
 }
 
 protocol MainInteractorInterface: InteractorInterface {
