@@ -25,6 +25,10 @@ class CartOperationsRepository: CartOperationsRepositoryInterface {
         coreData.saveToCoreData(cartList: cartList)
     }
     
+    func saveImageIntoCoreData(data: ProductImageSaveRequest) {
+        coreData.saveImageIntoCoreData(data: data)
+    }
+    
     deinit {
         print("DEINIT CartOperationsRepository")
     }

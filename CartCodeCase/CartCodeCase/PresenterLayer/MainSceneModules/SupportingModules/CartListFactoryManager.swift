@@ -20,4 +20,8 @@ class CartListFactoryManager {
         return CartListSaveUseCase(repository: repository)
     }
     
+    func createProductImageSaveUseCase() -> ProductImageSaveUseCase {
+        return ProductImageSaveUseCase(repository: repository)
+    }
+    
 }

@@ -1,6 +1,11 @@
 import UIKit
 
+protocol WireframeDataProtocol {
+    
+}
+
 protocol WireframeInterface: class {
+    func presentFurtherWireframes(_ wireframes: Wireframes)
 }
 
 class BaseWireframe {
@@ -18,7 +23,9 @@ class BaseWireframe {
 }
 
 extension BaseWireframe: WireframeInterface {
-
+    func presentFurtherWireframes(_ wireframes: Wireframes) {
+        viewController.presentWireframe(wireframes.value)
+    }
 }
 
 extension BaseWireframe {

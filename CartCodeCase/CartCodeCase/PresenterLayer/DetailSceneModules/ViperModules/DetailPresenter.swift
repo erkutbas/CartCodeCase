@@ -18,18 +18,25 @@ final class DetailPresenter {
     private let formatter: DetailFormatterInterface
     private let interactor: DetailInteractorInterface
     private let wireframe: DetailWireframeInterface
+    
+    private let wireFrameData: DetailWireframeData!
 
     // MARK: - Lifecycle -
 
-    init(view: DetailViewInterface, formatter: DetailFormatterInterface, interactor: DetailInteractorInterface, wireframe: DetailWireframeInterface) {
+    init(view: DetailViewInterface, formatter: DetailFormatterInterface, interactor: DetailInteractorInterface, wireframe: DetailWireframeInterface, data: DetailWireframeData) {
         self.view = view
         self.formatter = formatter
         self.interactor = interactor
         self.wireframe = wireframe
+        self.wireFrameData = data
     }
 }
 
 // MARK: - Extensions -
-
 extension DetailPresenter: DetailPresenterInterface {
+    
+    func getProductViewComponentData() -> ProductViewComponentData {
+        return wireFrameData.productData.setImageHeight(with: 300)
+    }
+    
 }

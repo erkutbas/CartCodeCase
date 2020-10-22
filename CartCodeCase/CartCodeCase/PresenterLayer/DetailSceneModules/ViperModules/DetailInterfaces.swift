@@ -17,6 +17,7 @@ protocol DetailViewInterface: ViewInterface {
 }
 
 protocol DetailPresenterInterface: PresenterInterface {
+    func getProductViewComponentData() -> ProductViewComponentData
 }
 
 protocol DetailFormatterInterface: FormatterInterface {

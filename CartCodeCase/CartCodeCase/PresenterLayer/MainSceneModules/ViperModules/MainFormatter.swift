@@ -52,7 +52,18 @@ extension MainFormatter: MainFormatterInterface {
         return productViewComponentData[index]
     }
     
-    
-    
+    func returnProductViewComponentDataForDetail(item: String) -> ProductViewComponentData? {
+        guard let result = productViewComponentData.filter({ (data) -> Bool in
+            guard let data = data as? ProductViewComponentData else { return false }
+            if data.productId == item {
+                return true
+            } else {
+                return false
+            }
+        }) as? Array<ProductViewComponentData> else { return nil }
+        
+        return result.getElement(at: 0)
+        
+    }
     
 }

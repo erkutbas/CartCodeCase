@@ -19,6 +19,7 @@ final class MainPresenter {
     private let interactor: MainInteractorInterface
     private let wireframe: MainWireframeInterface
     
+    private let networkManager = NetworkFactoryManager()
     private var callBack = CartListCallBack()
 
     // MARK: - Lifecycle -
@@ -28,6 +29,9 @@ final class MainPresenter {
         self.formatter = formatter
         self.interactor = interactor
         self.wireframe = wireframe
+        
+        subscribeNetworkManager()
+
     }
     
     private func getCartList() {
@@ -64,6 +68,20 @@ final class MainPresenter {
             print("takasi : \(item.name)")
             print("takasi : \(item.productDescription)")
         }
+        
+        let data2 = CoreDataManager.shared.fetch(ProductAssets.self)
+        print("data2 count : \(data2.count)")
+    }
+    
+    private func subscribeNetworkManager() {
+        networkManager.getNetworkManagerInstance().subscribeNetworkListener { [weak self](state) in
+            switch state {
+            case .offline:
+                print("offline")
+            case .online:
+                print("online")
+            }
+        }
     }
     
 }
@@ -91,5 +109,8 @@ extension MainPresenter: MainPresenterInterface {
     
     func fireProductDetailFlow(item: String?) {
         print("item : \(item)")
+        guard let item = item, let data = formatter.returnProductViewComponentDataForDetail(item: item) else { return }
+        wireframe.presentFurtherWireframes(Wireframes.detail(DetailWireframeData(productData: data)))
+        
     }
 }

@@ -5,18 +5,24 @@
 //  Created by Erkut Bas on 22.10.2020.
 //
 
-import Foundation
+import UIKit
 
 class ProductViewComponentData: GenericDataProtocol {
     
     private(set) var productId: String?
     private(set) var imageData: CustomImageViewComponentData
     private(set) var productInfoData: ProductBottomInfoComponentData
+    private(set) var imageHeight: CGFloat = 100
     
     init(productId: String?, imageData: CustomImageViewComponentData, productInfoData: ProductBottomInfoComponentData) {
         self.productId = productId
         self.imageData = imageData
         self.productInfoData = productInfoData
+    }
+    
+    func setImageHeight(with value: CGFloat) -> Self {
+        self.imageHeight = value
+        return self
     }
     
     var itemId: String? {

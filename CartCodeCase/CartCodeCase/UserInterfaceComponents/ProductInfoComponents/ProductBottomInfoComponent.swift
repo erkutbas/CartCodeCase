@@ -10,7 +10,7 @@ import UIKit
 class ProductBottomInfoComponent: GenericBaseView<ProductBottomInfoComponentData> {
 
     private lazy var mainStackView: UIStackView = {
-        let temp = UIStackView(arrangedSubviews: [productName, price])
+        let temp = UIStackView(arrangedSubviews: [productName, price, detail])
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.isUserInteractionEnabled = true
         temp.alignment = .fill
@@ -29,6 +29,14 @@ class ProductBottomInfoComponent: GenericBaseView<ProductBottomInfoComponentData
         let temp = PriceInfoLabel()
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.isUserInteractionEnabled = false
+        return temp
+    }()
+    
+    private lazy var detail: ProductDetailLabel = {
+        let temp = ProductDetailLabel()
+        temp.translatesAutoresizingMaskIntoConstraints = false
+        temp.isUserInteractionEnabled = false
+        temp.isHidden = true
         return temp
     }()
     
@@ -61,6 +69,10 @@ class ProductBottomInfoComponent: GenericBaseView<ProductBottomInfoComponentData
         guard let data = returnData() else { return }
         productName.setLabelData(data: data.productNameData)
         price.setLabelData(data: data.productPriceData)
+        
+        guard let detailData = data.productDetailData else { return }
+        detail.setLabelData(data: detailData)
+        detail.isHidden = false
     }
     
 }

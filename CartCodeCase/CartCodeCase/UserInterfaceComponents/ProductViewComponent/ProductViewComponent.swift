@@ -47,7 +47,7 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             
-            imageComponent.heightAnchor.constraint(equalToConstant: 100),
+            imageComponent.heightAnchor.constraint(equalToConstant: returnImageHeight()),
             imageComponent.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
             imageComponent.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             imageComponent.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
@@ -70,6 +70,11 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
         guard let data = returnData() as? ProductViewComponentData else { return }
         imageComponent.setData(componentData: data.imageData)
         productInfoComponent.setData(data: data.productInfoData)
+    }
+    
+    private func returnImageHeight() -> CGFloat {
+        guard let data = returnData() as? ProductViewComponentData else { return 100 }
+        return data.imageHeight
     }
     
 }

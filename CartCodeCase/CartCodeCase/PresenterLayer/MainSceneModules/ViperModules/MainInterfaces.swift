@@ -29,6 +29,7 @@ protocol MainFormatterInterface: FormatterInterface {
     func returnNumberOfSection() -> Int
     func returnNumberOfItems(in section: Int) -> Int
     func returnWidgetComponentItem(index: Int) -> GenericDataProtocol?
+    func returnProductViewComponentDataForDetail(item: String) -> ProductViewComponentData?
 }
 
 protocol MainInteractorInterface: InteractorInterface {
