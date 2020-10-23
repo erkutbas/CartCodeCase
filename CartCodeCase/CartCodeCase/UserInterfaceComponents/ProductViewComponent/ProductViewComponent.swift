@@ -70,11 +70,22 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
         guard let data = returnData() as? ProductViewComponentData else { return }
         imageComponent.setData(componentData: data.imageData)
         productInfoComponent.setData(data: data.productInfoData)
+        setupContainerShadowConfigurations(active: data.shadowOption)
     }
     
     private func returnImageHeight() -> CGFloat {
         guard let data = returnData() as? ProductViewComponentData else { return 100 }
         return data.imageHeight
+    }
+    
+    private func setupContainerShadowConfigurations(active: Bool) {
+        if active {
+            containerView.layer.cornerRadius = 6
+            containerView.layer.shadowColor = UIColor.black.cgColor
+            containerView.layer.shadowOffset = .zero
+            containerView.layer.shadowRadius = 2
+            containerView.layer.shadowOpacity = 0.4
+        }
     }
     
 }

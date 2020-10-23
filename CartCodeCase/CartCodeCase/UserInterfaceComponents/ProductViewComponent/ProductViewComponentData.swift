@@ -13,6 +13,7 @@ class ProductViewComponentData: GenericDataProtocol {
     private(set) var imageData: CustomImageViewComponentData
     private(set) var productInfoData: ProductBottomInfoComponentData
     private(set) var imageHeight: CGFloat = 100
+    private(set) var shadowOption: Bool = false
     
     init(productId: String?, imageData: CustomImageViewComponentData, productInfoData: ProductBottomInfoComponentData) {
         self.productId = productId
@@ -22,6 +23,11 @@ class ProductViewComponentData: GenericDataProtocol {
     
     func setImageHeight(with value: CGFloat) -> Self {
         self.imageHeight = value
+        return self
+    }
+    
+    func setShadowOption(with value: Bool) -> Self {
+        self.shadowOption = value
         return self
     }
     

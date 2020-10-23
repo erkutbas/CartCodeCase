@@ -14,7 +14,12 @@ class ProductNameLabel: BaseDynamicAttributedLabel<ProductNameLabelData> {
         
         guard let data = returnData() else { return }
         
-        attributedText = NSMutableAttributedString(string: "\(LocalizableManager.productName.value): \(data.name)", attributes: [.font : data.textFont!, .foregroundColor: data.textColor])
+        var attributedString = NSMutableAttributedString()
+        
+        attributedString = NSMutableAttributedString(string: "\(LocalizableManager.productName.value): ", attributes: [.font : data.textFont[0], .foregroundColor: data.textColor[0]])
+        attributedString.append(NSMutableAttributedString(string:  "\(data.name)", attributes: [.font : data.textFont[1], .foregroundColor: data.textColor[1]]))
+        
+        attributedText = attributedString
     }
     
 }

@@ -23,7 +23,13 @@ final class MainFormatter {
         
         productViewComponentData = data.map { (product) -> ProductViewComponentData in
             
-            return ProductViewComponentData(productId: product.productID, imageData: CustomImageViewComponentData(imageUrl: product.image ?? ""), productInfoData: ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: product.name ?? ""), productPriceData: PriceInfoLabelData(price: product.price ?? 0.0)))
+            let imageData = CustomImageViewComponentData(imageUrl: product.image ?? "")
+            let productInfoData = ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: product.name ?? ""),
+                                                                 productPriceData: PriceInfoLabelData(price: product.price ?? 0.0))
+            
+            return ProductViewComponentData(productId: product.productID,
+                                            imageData: imageData,
+                                            productInfoData: productInfoData)
             
         }
         

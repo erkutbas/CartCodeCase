@@ -14,7 +14,12 @@ class PriceInfoLabel: BaseDynamicAttributedLabel<PriceInfoLabelData> {
         
         guard let data = returnData() else { return }
         
-        attributedText = NSMutableAttributedString(string: "\(LocalizableManager.productPrice.value): \(data.price)", attributes: [.font : data.textFont!, .foregroundColor: data.textColor])
+        var attributedString = NSMutableAttributedString()
+        
+        attributedString = NSMutableAttributedString(string: "\(LocalizableManager.productPrice.value): ", attributes: [.font : data.textFont[0], .foregroundColor: data.textColor[0]])
+        attributedString.append(NSMutableAttributedString(string:  "\(data.price)", attributes: [.font : data.textFont[1], .foregroundColor: data.textColor[1]]))
+        
+        attributedText = attributedString
     }
     
 }

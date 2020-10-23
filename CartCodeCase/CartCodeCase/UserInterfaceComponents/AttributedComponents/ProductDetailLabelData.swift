@@ -10,20 +10,20 @@ import UIKit
 class ProductDetailLabelData {
     
     private(set) var description: String
-    private(set) var textColor: UIColor = UIColor.gray
-    private(set) var textFont: UIFont? = MainFont.Regular(12).value
+    private(set) var textColor: Array<UIColor> = [UIColor.black, UIColor.gray]
+    private(set) var textFont: Array<UIFont?> = [MainFont.Bold(14).value, MainFont.SemiBold(14).value]
     private(set) var textAlignment: NSTextAlignment = .left
     
     init(description: String) {
         self.description = description
     }
     
-    func setTextColor(with value: UIColor) -> Self {
+    func setTextColor(with value: Array<UIColor>) -> Self {
         self.textColor = value
         return self
     }
     
-    func setTextFont(with value: UIFont?) -> Self {
+    func setTextFont(with value: Array<UIFont?>) -> Self {
         self.textFont = value
         return self
     }

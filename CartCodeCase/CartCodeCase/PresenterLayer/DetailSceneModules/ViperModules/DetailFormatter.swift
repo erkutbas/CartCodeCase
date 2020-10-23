@@ -27,7 +27,7 @@ extension DetailFormatter: DetailFormatterInterface {
     func returnProductViewComponentData() -> ProductViewComponentData? {
         guard let data = productDetailResponse else { return nil }
         
-        return ProductViewComponentData(productId: data.productID, imageData: CustomImageViewComponentData(imageUrl: data.image ?? ""), productInfoData: ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: data.name ?? ""), productPriceData: PriceInfoLabelData(price: data.price ?? 0.0)).setProductDetailData(with: ProductDetailLabelData(description: data.productDescription ?? "")))
+        return ProductViewComponentData(productId: data.productID, imageData: CustomImageViewComponentData(imageUrl: data.image ?? ""), productInfoData: ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: data.name ?? ""), productPriceData: PriceInfoLabelData(price: data.price ?? 0.0)).setProductDetailData(with: ProductDetailLabelData(description: data.productDescription ?? ""))).setShadowOption(with: true)
         
     }
     
