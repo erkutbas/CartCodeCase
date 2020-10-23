@@ -9,7 +9,7 @@ import UIKit
 
 class CustomImageViewComponent: UIImageView  {
     
-    private lazy var cacheManager = ImageCacheFactoryManager().returnImageCacher()
+    private lazy var cacheManager = ImageCacheFactory().returnImageCacher()
     
     private var imageUrlString: String?
     

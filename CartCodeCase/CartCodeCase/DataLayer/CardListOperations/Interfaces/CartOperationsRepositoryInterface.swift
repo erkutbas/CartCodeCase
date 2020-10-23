@@ -12,6 +12,5 @@ protocol CartOperationsRepositoryInterface {
     func getCartList(params: CartListRequest, completion: @escaping (Result<CartListResponse, ErrorResponse>) -> Void)
     func getProductDetail(params: ProductDetailRequest, completion: @escaping (Result<ProductDetailResponse, ErrorResponse>) -> Void)
     func saveToCoreData(cartList: Array<Product>)
-//    func saveImageIntoCoreData(data: ProductImageSaveRequest)
     
 }

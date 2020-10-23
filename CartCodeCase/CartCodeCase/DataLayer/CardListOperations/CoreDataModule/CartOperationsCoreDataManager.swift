@@ -28,6 +28,7 @@ class CartOperationsCoreDataManager: CartOperationsCoreDataManagerInterface {
                 
                 object.productId = product.productID
                 object.name = product.name
+                object.imageUrl = product.image
                 
                 /*
                  core data set default values on some properties such as integer, boolean, double ...
@@ -59,20 +60,6 @@ class CartOperationsCoreDataManager: CartOperationsCoreDataManagerInterface {
         cardListEntities.removeAll()
         cardListEntities = coreDataManager.fetch(CartListEntity.self)
     }
-    
-//    func saveImageIntoCoreData(data: ProductImageSaveRequest) {
-//        if let _ = coreDataManager.fetchWithPredicate(ProductAssets.self, predicateKey: "imageUrl = %@", predicateValue: data.imageUrl) {
-//            // data exists
-//            print("image var")
-//        } else {
-//            print("image yok")
-//            let productAsset = ProductAssets(context: coreDataManager.context)
-//            productAsset.imageData = data.imageData
-//            productAsset.imageUrl = data.imageUrl
-//            
-//            coreDataManager.saveContext()
-//        }
-//    }
     
     deinit {
         print("DEINIT CartOperationsCoreDataManager")

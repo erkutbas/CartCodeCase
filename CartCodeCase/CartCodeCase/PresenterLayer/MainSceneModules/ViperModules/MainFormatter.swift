@@ -12,7 +12,7 @@ import UIKit
 
 final class MainFormatter {
     
-    private let factory = CoreDataFactory()
+    private var factory = ImageCacheFactory()
     private var cartListResponse: CartListResponse?
     private var productViewComponentData = Array<GenericDataProtocol>()
     
@@ -36,9 +36,15 @@ final class MainFormatter {
         
     }
     
-    private func setTotalDataIntoCoreDataManager() {
-        guard let data = cartListResponse, let products = data.products else { return }
-        factory.returnImageCoreDataManager().setOriginalDataCount(with: products.count)
+    private func checkCachedImage(imageUrl: String?) -> Bool {
+        guard let imageUrl = imageUrl else { return false }
+        
+        if let _ = factory.returnImageCacher().returnImagesFromCache(key: imageUrl) {
+            return true
+        } else {
+            return false
+        }
+        
     }
     
 }
@@ -49,7 +55,6 @@ extension MainFormatter: MainFormatterInterface {
     
     func setData(with response: CartListResponse) {
         self.cartListResponse = response
-        setTotalDataIntoCoreDataManager()
         cartListComponentMapper()
     }
 
@@ -60,6 +65,13 @@ extension MainFormatter: MainFormatterInterface {
         productViewComponentData = cartListEntity.map { (product) -> ProductViewComponentData in
             let productInfoData = ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: product.name ?? ""),
                                                                  productPriceData: PriceInfoLabelData(price: product.price ?? 0.0))
+            
+            if checkCachedImage(imageUrl: product.imageUrl) {
+                return ProductViewComponentData(productId: product.productId,
+                                                imageData: CustomImageViewComponentData(imageUrl: product.imageUrl ?? ""),
+                                                productInfoData: productInfoData)
+            }
+            
             return ProductViewComponentData(productId: product.productId,
                                             productInfoData: productInfoData)
         }

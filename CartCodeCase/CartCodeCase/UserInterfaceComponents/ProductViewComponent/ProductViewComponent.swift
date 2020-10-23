@@ -72,7 +72,10 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
         productInfoComponent.setData(data: data.productInfoData)
         setupContainerShadowConfigurations(active: data.shadowOption)
         
-        guard let imageData = data.imageData else { return }
+        guard let imageData = data.imageData else {
+            imageComponent.image = VisualContents.productIcon.value
+            return
+        }
         imageComponent.setData(componentData: imageData)
     }
     

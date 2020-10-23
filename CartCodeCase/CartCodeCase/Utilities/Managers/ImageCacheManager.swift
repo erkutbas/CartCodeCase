@@ -17,7 +17,6 @@ class ImageCacheManager {
     
     func setImagesToCache(object: UIImage, key: String) {
         imageCache.setObject(object, forKey: NSString(string: key))
-        factory.returnImageCoreDataManager().appendNewItem(ImageCoreDataStruct(image: object, imageUrl: key))
     }
     
     func returnImagesFromCache(key: String) -> UIImage? {

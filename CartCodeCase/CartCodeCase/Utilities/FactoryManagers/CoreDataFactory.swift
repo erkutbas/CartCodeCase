@@ -13,8 +13,4 @@ class CoreDataFactory {
         return CoreDataManager.shared
     }
     
-    func returnImageCoreDataManager() -> ImageCoreDataManager {
-        return ImageCoreDataManager.shared
-    }
-    
 }

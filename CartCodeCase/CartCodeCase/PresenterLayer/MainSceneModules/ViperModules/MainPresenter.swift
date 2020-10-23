@@ -136,7 +136,6 @@ extension MainPresenter: MainPresenterInterface {
     }
     
     func fireProductDetailFlow(item: String?) {
-        print("item : \(item)")
         guard let item = item, let data = formatter.returnProductViewComponentDataForDetail(item: item) else { return }
         wireframe.presentFurtherWireframes(Wireframes.detail(DetailWireframeData(productData: data)))
         

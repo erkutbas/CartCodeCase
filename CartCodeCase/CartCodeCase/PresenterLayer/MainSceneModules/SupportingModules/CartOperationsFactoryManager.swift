@@ -20,10 +20,6 @@ class CartOperationsFactoryManager {
         return CartListSaveUseCase(repository: repository)
     }
     
-    func createProductImageSaveUseCase() -> ProductImageSaveUseCase {
-        return ProductImageSaveUseCase(repository: repository)
-    }
-    
     func createProductDetailUseCase() -> ProductDetailUseCase {
         return ProductDetailUseCase(repository: repository)
     }
