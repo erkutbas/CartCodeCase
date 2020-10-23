@@ -6,6 +6,18 @@
   
 */
 
+// Mark: - Cart List & Product Strings -
 "productName" = "Product Name";
 "productPrice" = "Price";
 "productDescription" = "Description";
+"productDescriptionDoesNotExist" = "Product description does not exist.";
+"productNameDoesNotExist" = "Unknown";
+
+// Mark: - Warning Strings -
+"noNetworkTitle" = "Warning";
+"noNetworkSubtitle" = "Network connection failed. Please check wifi or cellular data. Some data retrived from backup.";
+"okay" = "OK";
+"cachedDataNotExistsTitle" = "Warning";
+"cachedDataNotExistsSubtitle" = "This is the first time you are launching the app. There is no saved cart list data. Please try again later when wifi connected.";
+"cachedDataExistTitle" = "Information";
+"cachedDataExistSubtitle" = "There is no network connection. Device, however, has some saved cart list data.";

@@ -10,12 +10,12 @@ import UIKit
 class ProductViewComponentData: GenericDataProtocol {
     
     private(set) var productId: String?
-    private(set) var imageData: CustomImageViewComponentData
+    private(set) var imageData: CustomImageViewComponentData?
     private(set) var productInfoData: ProductBottomInfoComponentData
     private(set) var imageHeight: CGFloat = 100
     private(set) var shadowOption: Bool = false
     
-    init(productId: String?, imageData: CustomImageViewComponentData, productInfoData: ProductBottomInfoComponentData) {
+    init(productId: String?, imageData: CustomImageViewComponentData? = nil, productInfoData: ProductBottomInfoComponentData) {
         self.productId = productId
         self.imageData = imageData
         self.productInfoData = productInfoData

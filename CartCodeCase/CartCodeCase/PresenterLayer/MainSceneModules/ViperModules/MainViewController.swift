@@ -81,4 +81,8 @@ extension MainViewController: MainViewInterface {
         cartListComponent.reloadCollectionView()
     }
     
+    func activateWarningView(with componentData: WarningViewComponentData?) {
+        cartListComponent?.activateBackgroundWarningView(with: componentData)
+    }
+    
 }

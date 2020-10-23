@@ -22,6 +22,7 @@ class APIManager: APIManagerInterface {
         let config = URLSessionConfiguration.default
         config.waitsForConnectivity = true
         config.timeoutIntervalForResource = 300
+        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         self.session = URLSession(configuration: config)
     }
     

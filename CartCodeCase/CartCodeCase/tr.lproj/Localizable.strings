@@ -6,6 +6,18 @@
   
 */
 
+// Mark: - Cart List & Product Strings -
 "productName" = "Ürün adı";
 "productPrice" = "Ücret";
 "productDescription" = "Açıklama";
+"productDescriptionDoesNotExist" = "Ürün açıklaması bulunmamaktadır.";
+"productNameDoesNotExist" = "Unknown";
+
+// Mark: - Warning Strings -
+"noNetworkTitle" = "Uyarı";
+"noNetworkSubtitle" = "Internet bağlantınız bulunmamaktadır. Lütfen wifi - hücresel veri bağlantınızı kontrol ediniz. Offline durumda bazı datalarınız sistemden çekilmektedir.";
+"okay" = "Tamam";
+"cachedDataNotExistsTitle" = "Üzgünüz";
+"cachedDataNotExistsSubtitle" = "Uygulamayı ilk defa kullanmaktasınız. Kayıtlı ürün listesi bulunmamaktadır. Lütfen internet bağlantısı kurulduktan sonra yeniden deneyiniz";
+"cachedDataExistTitle" = "Bilgilendirme";
+"cachedDataExistSubtitle" = "İnternet bağlantısı bulunmamaktadır. Cihazınızda kayıtlı ürünler listenecektir.";

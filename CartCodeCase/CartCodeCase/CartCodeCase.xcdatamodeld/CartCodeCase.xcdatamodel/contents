@@ -6,12 +6,7 @@
         <attribute name="productDescription" optional="YES" attributeType="String"/>
         <attribute name="productId" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="ProductAssets" representedClassName="ProductAssets" syncable="YES" codeGenerationType="class">
-        <attribute name="imageData" optional="YES" attributeType="Binary"/>
-        <attribute name="imageUrl" optional="YES" attributeType="String"/>
-    </entity>
     <elements>
         <element name="CartListEntity" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="ProductAssets" positionX="-63" positionY="18" width="128" height="73"/>
     </elements>
 </model>

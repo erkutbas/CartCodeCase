@@ -21,6 +21,7 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
         temp.translatesAutoresizingMaskIntoConstraints = false
         temp.clipsToBounds = true
         temp.contentMode = .scaleAspectFit
+        temp.image = VisualContents.productIcon.value
         return temp
     }()
     
@@ -68,9 +69,11 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
     
     private func setViewData() {
         guard let data = returnData() as? ProductViewComponentData else { return }
-        imageComponent.setData(componentData: data.imageData)
         productInfoComponent.setData(data: data.productInfoData)
         setupContainerShadowConfigurations(active: data.shadowOption)
+        
+        guard let imageData = data.imageData else { return }
+        imageComponent.setData(componentData: imageData)
     }
     
     private func returnImageHeight() -> CGFloat {

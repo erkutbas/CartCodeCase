@@ -13,6 +13,8 @@ class CartListComponent: GenericBaseView<CartListComponentData> {
     
     private weak var delegate: CartListComponentDelegate?
     private var selectedCell: SelectedCellCompletionBlock?
+    
+    private var warningViewComponent: WarningViewComponent?
 
     lazy var layout: UICollectionViewFlowLayout = {
         let temp = UICollectionViewFlowLayout()
@@ -61,6 +63,7 @@ class CartListComponent: GenericBaseView<CartListComponentData> {
     }
     
     private func listenSelectedCell(data: GenericDataProtocol) {
+        isUserInteractionEnabled = true
         selectedCell?(data)
     }
     
@@ -79,6 +82,23 @@ class CartListComponent: GenericBaseView<CartListComponentData> {
     
     func subscribeSelectedCell(completion: @escaping SelectedCellCompletionBlock) {
         selectedCell = completion
+    }
+    
+    func activateBackgroundWarningView(with componentData: WarningViewComponentData? = nil) {
+        if componentData != nil {
+            warningViewComponent = WarningViewComponent(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400), data: componentData)
+            collectionView.backgroundView = warningViewComponent
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.warningViewComponent?.activationManager(active: true, animated: true)
+            }
+            
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                self?.warningViewComponent?.activationManager(active: false, animated: true)
+            }
+        }
+        
     }
     
 }
@@ -102,6 +122,7 @@ extension CartListComponent: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ProductViewCellComponent else { return }
+        isUserInteractionEnabled = false
         cell.subscribeToSelectedRow(completion: listenSelectedCell(data:))
     }
     
@@ -116,154 +137,3 @@ extension CartListComponent: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
 }
-
-//typealias SelectedProductCompletionHandler = (GenericComponentDataProtocol) -> Void
-
-/*
-class CartListComponent: GenericBaseView<CartListComponentData> {
-    
-    private weak var delegate: WidgetCollectionComponentProtocol?
-    private var selectedProduct: SelectedProductCompletionHandler?
-    
-    private let layout = WidgetCollectionCompositionalLayoutManager()
-    
-    lazy var collectionView: UICollectionView = {
-        let temp = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        temp.translatesAutoresizingMaskIntoConstraints = false
-        temp.delegate  = self
-        temp.dataSource = self
-        return temp
-    }()
-    
-    override func addMajorFields() {
-        super.addMajorFields()
-        
-        /*
-         adding required components
-         */
-        addCollectionView()
-        
-    }
-    
-    override func setupViews() {
-        super.setupViews()
-        backgroundColor = ColorSpectrum.defaultBackground
-        collectionView.backgroundColor = ColorSpectrum.defaultBackground
-        registerCells()
-    }
-    
-    
-    private func registerCells() {
-        collectionView.genericRegisterCell(SingleBannerCellComponent.self)
-        collectionView.genericRegisterCell(ProductSliderCellComponent.self)
-        collectionView.genericRegisterCell(BannerSliderCellComponent.self)
-        collectionView.genericRegisterCell(ProductListCellComponent.self)
-        collectionView.genericRegisterCell(CarouselBannerCellComponent.self)
-    }
-    
-    private func addCollectionView() {
-        addSubview(collectionView)
-        
-        NSLayoutConstraint.activate([
-        
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-        
-        ])
-    }
-    
-    private func listenProductCellSelection(_ data: GenericComponentDataProtocol) {
-        isUserInteractionEnabled = true
-        selectedProduct?(data)
-    }
-    
-    // Mark: - Public Methods -
-    func setComponent(delegate: WidgetCollectionComponentProtocol) {
-        self.delegate = delegate
-    }
-    
-    func reloadWidgetCollection() {
-        guard let layout = layout.createCompositionalLayout(data: delegate?.getWidgetComponentsData()) else { return }
-        collectionView.setCollectionViewLayout(layout, animated: true)
-        collectionView.reloadData()
-    }
-    
-    func subscribeProductSelection(completion: @escaping SelectedProductCompletionHandler) {
-        selectedProduct = completion
-    }
-    
-}
-
-extension WidgetCollectionComponent: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return delegate?.getNumberOfSection() ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return delegate?.getNumberOfItems(in: section) ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return returnCollectionViewCell(indexPath: indexPath)
-    }
-    
-    private func returnCollectionViewCell(indexPath: IndexPath) -> BaseCollectionViewCell {
-
-        guard let data = delegate?.getWidgetComponentItem(index: indexPath.section) else { fatalError() }
-        
-        switch data.componentViewType {
-        case .singleBanner:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleBannerCellComponent.identifier, for: indexPath) as? SingleBannerCellComponent else { fatalError() }
-            guard let componentData = data.returnGenericData(indexPath: indexPath) else { fatalError() }
-            cell.setRowData(data: componentData)
-            return cell
-            
-        case .productSlider:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductSliderCellComponent.identifier, for: indexPath) as? ProductSliderCellComponent else { fatalError() }
-            guard let componentData = data.returnGenericData(indexPath: indexPath) else { fatalError() }
-            cell.setRowData(data: componentData)
-            return cell
-            
-        case .bannerSlider:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerSliderCellComponent.identifier, for: indexPath) as? BannerSliderCellComponent else { fatalError() }
-            guard let componentData = data.returnGenericData(indexPath: indexPath) else { fatalError() }
-            cell.setRowData(data: componentData)
-            return cell
-            
-        case .productListing:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCellComponent.identifier, for: indexPath) as? ProductListCellComponent else { fatalError() }
-            guard let componentData = data.returnGenericData(indexPath: indexPath) else { fatalError() }
-            cell.setRowData(data: componentData)
-            return cell
-            
-        case .carouselBanner:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CarouselBannerCellComponent.identifier, for: indexPath) as? CarouselBannerCellComponent else { fatalError() }
-            guard let componentData = data.returnGenericData(indexPath: indexPath) else { fatalError() }
-            cell.setRowData(data: componentData)
-            return cell
-            
-        default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleBannerCellComponent.identifier, for: indexPath) as? SingleBannerCellComponent else { fatalError() }
-            return cell
-        }
-
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        if let cell = collectionView.cellForItem(at: indexPath) as? ProductSliderCellComponent {
-            isUserInteractionEnabled = false
-            cell.subscribeToSelectedRow(completion: listenProductCellSelection(_:))
-        } else if let cell = collectionView.cellForItem(at: indexPath) as? ProductListCellComponent {
-            isUserInteractionEnabled = false
-            cell.subscribeToSelectedRow(completion: listenProductCellSelection(_:))
-        }
-        
-    }
-    
-    
-}
- */

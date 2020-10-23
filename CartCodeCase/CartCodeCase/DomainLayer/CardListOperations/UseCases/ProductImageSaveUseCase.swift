@@ -16,7 +16,7 @@ class ProductImageSaveUseCase: CompletableUseCase<ProductImageSaveRequest> {
     }
     
     override func generateUseCase(parameter: ProductImageSaveRequest, completion: @escaping (Result<Completed, ErrorResponse>) -> Void) {
-        repository.saveImageIntoCoreData(data: parameter)
+//        repository.saveImageIntoCoreData(data: parameter)
     }
     
 }

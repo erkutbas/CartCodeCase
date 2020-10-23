@@ -9,5 +9,5 @@ import Foundation
 
 protocol CartOperationsCoreDataManagerInterface {
     func saveToCoreData(cartList: Array<Product>)
-    func saveImageIntoCoreData(data: ProductImageSaveRequest)
+//    func saveImageIntoCoreData(data: ProductImageSaveRequest)
 }

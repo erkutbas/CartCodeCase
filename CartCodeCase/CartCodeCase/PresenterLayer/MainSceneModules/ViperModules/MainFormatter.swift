@@ -12,6 +12,7 @@ import UIKit
 
 final class MainFormatter {
     
+    private let factory = CoreDataFactory()
     private var cartListResponse: CartListResponse?
     private var productViewComponentData = Array<GenericDataProtocol>()
     
@@ -35,6 +36,11 @@ final class MainFormatter {
         
     }
     
+    private func setTotalDataIntoCoreDataManager() {
+        guard let data = cartListResponse, let products = data.products else { return }
+        factory.returnImageCoreDataManager().setOriginalDataCount(with: products.count)
+    }
+    
 }
 
 // MARK: - Extensions -
@@ -43,7 +49,20 @@ extension MainFormatter: MainFormatterInterface {
     
     func setData(with response: CartListResponse) {
         self.cartListResponse = response
+        setTotalDataIntoCoreDataManager()
         cartListComponentMapper()
+    }
+
+    func setData(with cartListEntity: Array<CartListEntity>) {
+        
+        productViewComponentData.removeAll()
+        
+        productViewComponentData = cartListEntity.map { (product) -> ProductViewComponentData in
+            let productInfoData = ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: product.name ?? ""),
+                                                                 productPriceData: PriceInfoLabelData(price: product.price ?? 0.0))
+            return ProductViewComponentData(productId: product.productId,
+                                            productInfoData: productInfoData)
+        }
     }
     
     func returnNumberOfSection() -> Int {
