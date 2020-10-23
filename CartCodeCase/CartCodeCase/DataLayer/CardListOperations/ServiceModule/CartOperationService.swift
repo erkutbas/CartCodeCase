@@ -13,4 +13,7 @@ class CartOperationService {
         return CartListServiceModule(request: request)
     }
     
+    func getProductDetailServiceModule(request: ProductDetailRequest) -> ProductDetailServiceModule {
+        return ProductDetailServiceModule(request: request)
+    }
 }

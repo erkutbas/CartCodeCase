@@ -11,9 +11,24 @@
 import UIKit
 
 final class DetailFormatter {
+    
+    private var productDetailResponse: ProductDetailResponse?
+    
 }
 
 // MARK: - Extensions -
 
 extension DetailFormatter: DetailFormatterInterface {
+    
+    func setProductDetailResponse(data: ProductDetailResponse) {
+        self.productDetailResponse = data
+    }
+    
+    func returnProductViewComponentData() -> ProductViewComponentData? {
+        guard let data = productDetailResponse else { return nil }
+        
+        return ProductViewComponentData(productId: data.productID, imageData: CustomImageViewComponentData(imageUrl: data.image ?? ""), productInfoData: ProductBottomInfoComponentData(productNameData: ProductNameLabelData(name: data.name ?? ""), productPriceData: PriceInfoLabelData(price: data.price ?? 0.0)).setProductDetailData(with: ProductDetailLabelData(description: data.productDescription ?? "")))
+        
+    }
+    
 }

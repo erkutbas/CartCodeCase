@@ -11,9 +11,17 @@
 import Foundation
 
 final class DetailInteractor {
+    
+    private var factory = CartOperationsFactoryManager()
+    
 }
 
 // MARK: - Extensions -
 
 extension DetailInteractor: DetailInteractorInterface {
+    
+    func getProductDetailResponse(callBack: ProductDetailCallBack, params: ProductDetailRequest) {
+        factory.createProductDetailUseCase().execute(useCaseCallBack: callBack, params: params)
+    }
+    
 }

@@ -14,7 +14,6 @@ protocol MainWireframeInterface: WireframeInterface {
 }
 
 protocol MainViewInterface: ViewInterface {
-    func informViewToLoadData()
 }
 
 protocol MainPresenterInterface: PresenterInterface {

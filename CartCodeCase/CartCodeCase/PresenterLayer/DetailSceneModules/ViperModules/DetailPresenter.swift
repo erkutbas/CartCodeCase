@@ -20,6 +20,8 @@ final class DetailPresenter {
     private let wireframe: DetailWireframeInterface
     
     private let wireFrameData: DetailWireframeData!
+    
+    private let callBack = ProductDetailCallBack()
 
     // MARK: - Lifecycle -
 
@@ -30,13 +32,50 @@ final class DetailPresenter {
         self.wireframe = wireframe
         self.wireFrameData = data
     }
+    
+    private func getProductDetailData() {
+        guard let request = createProductDetailRequest() else { return }
+        callBack.commonResult(completion: callBackListener)
+        interactor.getProductDetailResponse(callBack: callBack, params: request)
+    }
+
+    private lazy var callBackListener: (Result<ProductDetailResponse, ErrorResponse>) -> Void = { [weak self] result in
+        switch result {
+        case .failure(let error):
+            print("error : \(error)")
+            
+        case .success(let data):
+            print(data)
+            self?.formatter.setProductDetailResponse(data: data)
+            self?.view.informViewToLoadData()
+        }
+    }
+    
+    private func createProductDetailRequest() -> ProductDetailRequest? {
+        guard let productId = wireFrameData.productData.productId else { return nil }
+        return ProductDetailRequest(productId: productId)
+    }
+    
 }
 
 // MARK: - Extensions -
 extension DetailPresenter: DetailPresenterInterface {
     
-    func getProductViewComponentData() -> ProductViewComponentData {
-        return wireFrameData.productData.setImageHeight(with: 300)
+    func viewDidLoad() {
+        getProductDetailData()
+    }
+    
+    func getProductViewComponentData(state: DetailPresenterDataViewState) -> ProductViewComponentData {
+        switch state {
+        case .cache:
+            return wireFrameData.productData.setImageHeight(with: 300)
+        case .remote:
+            if let data = formatter.returnProductViewComponentData() {
+                return data
+            } else {
+                return wireFrameData.productData.setImageHeight(with: 300)
+            }
+        }
     }
     
 }

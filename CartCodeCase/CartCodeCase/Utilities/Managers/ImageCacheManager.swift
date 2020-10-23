@@ -13,7 +13,7 @@ class ImageCacheManager {
     public static let shared = ImageCacheManager()
     
     private let imageCache = NSCache<NSString, UIImage>()
-    private let factory = CartListFactoryManager()
+    private let factory = CartOperationsFactoryManager()
     
     func setImagesToCache(object: UIImage, key: String) {
         imageCache.setObject(object, forKey: NSString(string: key))

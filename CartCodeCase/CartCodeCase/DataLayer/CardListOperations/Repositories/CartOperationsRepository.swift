@@ -21,6 +21,10 @@ class CartOperationsRepository: CartOperationsRepositoryInterface {
         remote.getCartList(params: params, completion: completion)
     }
     
+    func getProductDetail(params: ProductDetailRequest, completion: @escaping (Result<ProductDetailResponse, ErrorResponse>) -> Void) {
+        remote.getProductDetail(params: params, completion: completion)
+    }
+    
     func saveToCoreData(cartList: Array<Product>) {
         coreData.saveToCoreData(cartList: cartList)
     }

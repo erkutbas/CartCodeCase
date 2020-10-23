@@ -27,7 +27,7 @@ final class DetailViewController: BaseViewController {
     }
     
     private func addProductViewComponent() {
-        productViewComponent = ProductViewComponent(data: presenter.getProductViewComponentData())
+        productViewComponent = ProductViewComponent(data: presenter.getProductViewComponentData(state: .cache))
         productViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(productViewComponent)
@@ -47,4 +47,9 @@ final class DetailViewController: BaseViewController {
 
 // MARK: - Extensions -
 extension DetailViewController: DetailViewInterface {
+    func informViewToLoadData() {
+        DispatchQueue.main.async { [weak self] in
+            self?.productViewComponent.setData(data: self?.presenter.getProductViewComponentData(state: .remote))
+        }
+    }
 }

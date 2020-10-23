@@ -15,6 +15,13 @@ class CustomImageViewComponent: UIImageView  {
     
     func setData(componentData: CustomImageViewComponentData) {
         
+        DispatchQueue.main.async { [weak self] in
+            self?.imageLoadingProcess(componentData: componentData)
+        }
+        
+    }
+    
+    private func imageLoadingProcess(componentData: CustomImageViewComponentData) {
         imageUrlString = componentData.imageUrl
         
         image = nil
@@ -37,7 +44,6 @@ class CustomImageViewComponent: UIImageView  {
             }
             
         }.resume()
-        
     }
     
     private func handleTaskResponse(data: Data?, imageUrl: String) {

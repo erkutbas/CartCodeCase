@@ -1,5 +1,5 @@
 //
-//  CartListFactoryManager.swift
+//  CartOperationsFactoryManager.swift
 //  CartCodeCase
 //
 //  Created by Erkut Bas on 21.10.2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CartListFactoryManager {
+class CartOperationsFactoryManager {
     
     private lazy var apiRemote = CartOperationsApiRemote(apiManager: APIManager.shared, serviceProvider: CartOperationService())
     private lazy var repository = CartOperationsRepository(remote: apiRemote, coreData: CartOperationsCoreDataManager(coreDataManager: CoreDataManager.shared))
@@ -24,4 +24,7 @@ class CartListFactoryManager {
         return ProductImageSaveUseCase(repository: repository)
     }
     
+    func createProductDetailUseCase() -> ProductDetailUseCase {
+        return ProductDetailUseCase(repository: repository)
+    }
 }
