@@ -35,6 +35,7 @@ class NetworkCheckerManager {
         }
 
         monitor.start(queue: queue)
+        
     }
     
     func subscribeNetworkListener(_ completion: @escaping NetworkListener) {

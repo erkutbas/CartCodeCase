@@ -68,14 +68,26 @@ extension DetailPresenter: DetailPresenterInterface {
     func getProductViewComponentData(state: DetailPresenterDataViewState) -> ProductViewComponentData {
         switch state {
         case .cache:
-            return wireFrameData.productData.setImageHeight(with: 300)
+            return wireFrameData.productData
+                .setImageHeight(with: 300)
+                .setShadowOption(with: true)
         case .remote:
             if let data = formatter.returnProductViewComponentData() {
                 return data
             } else {
-                return wireFrameData.productData.setImageHeight(with: 300)
+                return wireFrameData.productData
+                    .setImageHeight(with: 300)
+                    .setShadowOption(with: true)
             }
         }
+    }
+    
+    func getImageContainerData() -> ImageContainerData {
+        return formatter.returnImageContainerData()
+    }
+    
+    func dismissView() {
+        wireframe.dismissWireframe()
     }
     
 }

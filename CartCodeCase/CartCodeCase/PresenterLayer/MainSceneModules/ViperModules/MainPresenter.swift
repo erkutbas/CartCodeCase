@@ -31,7 +31,7 @@ final class MainPresenter {
         self.interactor = interactor
         self.wireframe = wireframe
         
-        subscribeNetworkManager()
+//        subscribeNetworkManager()
 
     }
     
@@ -75,6 +75,9 @@ final class MainPresenter {
     
     private func subscribeNetworkManager() {
         networkManager.getNetworkManagerInstance().subscribeNetworkListener { [weak self](state) in
+            
+            print("BURADAYIM 2")
+            
             switch state {
             case .offline:
                 print("offline")
@@ -83,6 +86,7 @@ final class MainPresenter {
                 }
             case .online:
                 print("online")
+                self?.getCartList()
                 self?.view.activateWarningView(with: nil)
             }
         }
@@ -120,7 +124,9 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterInterface {
     
     func viewDidLoad() {
-        getCartList()
+        subscribeNetworkManager()
+//        getCartList()
+        print("BURADAYIM 1")
     }
     
     func getNumberOfSection() -> Int {

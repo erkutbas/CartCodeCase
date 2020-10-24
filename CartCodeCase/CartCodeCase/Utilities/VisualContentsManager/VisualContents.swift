@@ -12,6 +12,7 @@ enum VisualContents: GenericValueProtocol {
     
     case productIcon
     case warningIcon
+    case closeIcon
     
     var value: UIImage {
         switch self {
@@ -19,6 +20,8 @@ enum VisualContents: GenericValueProtocol {
             return UIImage(imageLiteralResourceName: "new-product")
         case .warningIcon:
             return UIImage(imageLiteralResourceName: "warningIcon")
+        case .closeIcon:
+            return UIImage(imageLiteralResourceName: "closeIcon")
         }
     }
 }

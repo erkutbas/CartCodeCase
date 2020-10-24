@@ -7,6 +7,7 @@ protocol WireframeDataProtocol {
 protocol WireframeInterface: class {
     func presentFurtherWireframes(_ wireframes: Wireframes)
     func displayWarning(controller: UIAlertController, completion: (() -> Void)?)
+    func dismissWireframe()
 }
 
 class BaseWireframe {
@@ -30,6 +31,10 @@ extension BaseWireframe: WireframeInterface {
     
     func displayWarning(controller: UIAlertController, completion: (() -> Void)?) {
         viewController.present(controller, animated: true, completion: completion)
+    }
+
+    func dismissWireframe() {
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
 

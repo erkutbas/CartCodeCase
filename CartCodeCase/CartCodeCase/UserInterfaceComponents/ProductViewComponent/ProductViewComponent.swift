@@ -34,6 +34,8 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
     override func addMajorFields() {
         super.addMajorFields()
         addComponents()
+        setupContainerShadowConfigurations()
+        
     }
     
     private func addComponents() {
@@ -70,7 +72,7 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
     private func setViewData() {
         guard let data = returnData() as? ProductViewComponentData else { return }
         productInfoComponent.setData(data: data.productInfoData)
-        setupContainerShadowConfigurations(active: data.shadowOption)
+        //setupContainerShadowConfigurations(active: data.shadowOption)
         
         guard let imageData = data.imageData else {
             imageComponent.image = VisualContents.productIcon.value
@@ -84,8 +86,9 @@ class ProductViewComponent: GenericBaseView<GenericDataProtocol> {
         return data.imageHeight
     }
     
-    private func setupContainerShadowConfigurations(active: Bool) {
-        if active {
+    private func setupContainerShadowConfigurations() {
+        guard let data = returnData() as? ProductViewComponentData else { return }
+        if data.shadowOption {
             containerView.layer.cornerRadius = 6
             containerView.layer.shadowColor = UIColor.black.cgColor
             containerView.layer.shadowOffset = .zero

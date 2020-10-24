@@ -31,4 +31,13 @@ extension DetailFormatter: DetailFormatterInterface {
         
     }
     
+    func returnImageContainerData() -> ImageContainerData {
+        
+        return ImageContainerData()
+            .setImage(with: VisualContents.closeIcon.value)
+            .setWidth(with: 30)
+            .setHeight(with: 30)
+        
+    }
+    
 }

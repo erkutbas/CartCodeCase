@@ -18,11 +18,14 @@ protocol DetailViewInterface: ViewInterface {
 
 protocol DetailPresenterInterface: PresenterInterface {
     func getProductViewComponentData(state: DetailPresenterDataViewState) -> ProductViewComponentData
+    func getImageContainerData() -> ImageContainerData
+    func dismissView() 
 }
 
 protocol DetailFormatterInterface: FormatterInterface {
     func setProductDetailResponse(data: ProductDetailResponse)
     func returnProductViewComponentData() -> ProductViewComponentData?
+    func returnImageContainerData() -> ImageContainerData
 }
 
 protocol DetailInteractorInterface: InteractorInterface {

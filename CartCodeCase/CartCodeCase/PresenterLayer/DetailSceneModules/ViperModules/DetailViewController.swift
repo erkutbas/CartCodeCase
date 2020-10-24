@@ -13,6 +13,7 @@ import UIKit
 final class DetailViewController: BaseViewController {
 
     private var productViewComponent: ProductViewComponent!
+    private var closeIcon: CloseButtonComponent!
     
     // MARK: - Public properties -
     var presenter: DetailPresenterInterface!
@@ -22,6 +23,8 @@ final class DetailViewController: BaseViewController {
         super.prepareViewControllerConfigurations()
         
         addProductViewComponent()
+        addCloseIcon()
+        addCloseIconListeners()
         
         presenter.viewDidLoad()
     }
@@ -42,7 +45,28 @@ final class DetailViewController: BaseViewController {
         ])
         
     }
+    
+    private func addCloseIcon() {
+        closeIcon = CloseButtonComponent()
+        closeIcon.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(closeIcon)
+        
+        NSLayoutConstraint.activate([
+        
+            closeIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            closeIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)
+        
+        ])
+        
+    }
 
+    private func addCloseIconListeners() {
+        closeIcon.subscribeCloseButton { [weak self] in
+            self?.presenter.dismissView()
+        }
+    }
+    
 }
 
 // MARK: - Extensions -
