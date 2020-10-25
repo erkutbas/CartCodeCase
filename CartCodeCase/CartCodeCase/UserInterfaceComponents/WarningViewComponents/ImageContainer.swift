@@ -28,7 +28,7 @@ class ImageContainer: GenericBaseView<ImageContainerData> {
         NSLayoutConstraint.activate([
         
             imageView.heightAnchor.constraint(equalToConstant: returnContentSize().0),
-            imageView.heightAnchor.constraint(equalToConstant: returnContentSize().1),
+            imageView.widthAnchor.constraint(equalToConstant: returnContentSize().1),
             
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),

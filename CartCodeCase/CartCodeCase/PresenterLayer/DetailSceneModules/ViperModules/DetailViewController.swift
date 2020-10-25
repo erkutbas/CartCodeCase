@@ -54,7 +54,7 @@ final class DetailViewController: BaseViewController {
         
         NSLayoutConstraint.activate([
         
-            closeIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            closeIcon.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             closeIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 20)
         
         ])

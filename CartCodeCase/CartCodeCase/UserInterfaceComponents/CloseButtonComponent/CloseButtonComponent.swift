@@ -19,6 +19,8 @@ class CloseButtonComponent: GenericBaseView<CloseButtonComponentData> {
         super.setupViews()
         
         addGestureRecognizer()
+        
+        
     }
     
     override func addMajorFields() {
