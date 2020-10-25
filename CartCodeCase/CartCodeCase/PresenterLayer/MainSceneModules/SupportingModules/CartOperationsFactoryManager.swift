@@ -23,4 +23,9 @@ class CartOperationsFactoryManager {
     func createProductDetailUseCase() -> ProductDetailUseCase {
         return ProductDetailUseCase(repository: repository)
     }
+    
+    func returnRepository() -> CartOperationsRepository {
+        return repository
+    }
+    
 }

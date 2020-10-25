@@ -10,14 +10,13 @@
 
 import Foundation
 
-final class MainInteractor {
+class MainInteractor {
     
     private var factory = CartOperationsFactoryManager()
     
 }
 
 // MARK: - Extensions -
-
 extension MainInteractor: MainInteractorInterface {
     
     func getCartListData(parameters: CartListRequest, callBack: CartListCallBack) {

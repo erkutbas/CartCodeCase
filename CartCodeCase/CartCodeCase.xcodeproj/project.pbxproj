@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70FA6D1254582DB0017FE92 /* CartListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA6D0254582DB0017FE92 /* CartListInteractorTests.swift */; };
+		A70FA6DB25458E190017FE92 /* CloseButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BB1F25448BB800683BB3 /* CloseButtonComponent.swift */; };
+		A70FA6DC25458E190017FE92 /* CloseButtonComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9BB2725448BC700683BB3 /* CloseButtonComponentData.swift */; };
+		A70FA6EF2545A5490017FE92 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FA6EE2545A5490017FE92 /* DetailInteractorTests.swift */; };
 		A7256E432541F81D00F61FAA /* ProductViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7256E422541F81D00F61FAA /* ProductViewCellComponent.swift */; };
 		A7256E4B2541F89400F61FAA /* CartListComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7256E4A2541F89400F61FAA /* CartListComponentData.swift */; };
 		A7256E502541F98A00F61FAA /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7256E4F2541F98A00F61FAA /* UICollectionView+Extension.swift */; };
@@ -313,6 +317,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A70FA6D0254582DB0017FE92 /* CartListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListInteractorTests.swift; sourceTree = "<group>"; };
+		A70FA6EE2545A5490017FE92 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
 		A7256E422541F81D00F61FAA /* ProductViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCellComponent.swift; sourceTree = "<group>"; };
 		A7256E4A2541F89400F61FAA /* CartListComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListComponentData.swift; sourceTree = "<group>"; };
 		A7256E4F2541F98A00F61FAA /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
@@ -495,6 +501,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70FA6CF254582AF0017FE92 /* InteractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A70FA6D0254582DB0017FE92 /* CartListInteractorTests.swift */,
+				A70FA6EE2545A5490017FE92 /* DetailInteractorTests.swift */,
+			);
+			path = InteractorTests;
+			sourceTree = "<group>";
+		};
 		A766F25A253FA46600CE168F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -866,6 +881,7 @@
 		A7E5E244253F4EE600236C55 /* CartCodeCaseTests */ = {
 			isa = PBXGroup;
 			children = (
+				A70FA6CF254582AF0017FE92 /* InteractorTests */,
 				A7C9B9CA2543935E00683BB3 /* EntitiyTest */,
 				A7E5E245253F4EE600236C55 /* CartCodeCaseTests.swift */,
 				A7E5E247253F4EE600236C55 /* Info.plist */,
@@ -1434,10 +1450,13 @@
 				A7E5E287253F5A8600236C55 /* MainInterfaces.swift in Sources */,
 				A7E5E323253F73CD00236C55 /* CartOperationsRepository.swift in Sources */,
 				A7E5E2A2253F5B8F00236C55 /* GenericValueProtocol.swift in Sources */,
+				A70FA6DC25458E190017FE92 /* CloseButtonComponentData.swift in Sources */,
 				A7C9BACE2543968900683BB3 /* APIManagerInterface.swift in Sources */,
 				A7C9BA622543963400683BB3 /* FontManager.swift in Sources */,
+				A70FA6D1254582DB0017FE92 /* CartListInteractorTests.swift in Sources */,
 				A7C9BA7D2543964100683BB3 /* ConstantEndpoints.swift in Sources */,
 				A7C9BA892543964800683BB3 /* DetailPresenterDataViewState.swift in Sources */,
+				A70FA6DB25458E190017FE92 /* CloseButtonComponent.swift in Sources */,
 				A7C9BAA62543966800683BB3 /* CartListSaveUseCase.swift in Sources */,
 				A7E5E291253F5A8600236C55 /* MainWireframe.swift in Sources */,
 				A7C9BA542543962700683BB3 /* CustomImageViewComponent.swift in Sources */,
@@ -1465,6 +1484,7 @@
 				A7C9BA242543960400683BB3 /* WarningInfoComponentData.swift in Sources */,
 				A7C9BAB82543967C00683BB3 /* CartOperationService.swift in Sources */,
 				A7E5E2BC253F5BF600236C55 /* DetailPresenter.swift in Sources */,
+				A70FA6EF2545A5490017FE92 /* DetailInteractorTests.swift in Sources */,
 				A7C9BA8E2543964F00683BB3 /* CartOperationsFactoryManager.swift in Sources */,
 				A7C9BA432543961C00683BB3 /* CartListComponent.swift in Sources */,
 				A7C9BA2D2543960800683BB3 /* ProductDetailLabelData.swift in Sources */,

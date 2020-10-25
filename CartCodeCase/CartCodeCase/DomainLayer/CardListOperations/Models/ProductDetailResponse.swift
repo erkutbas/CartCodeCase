@@ -29,3 +29,9 @@ class ProductDetailResponse: BaseResponse {
         self.productDescription = productDescription
     }
 }
+
+extension ProductDetailResponse: Equatable {
+    static func == (lhs: ProductDetailResponse, rhs: ProductDetailResponse) -> Bool {
+        return lhs.productID == rhs.productID
+    }
+}
