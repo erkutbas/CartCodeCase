@@ -42,3 +42,9 @@ class Product: CodableDataProtocol, ProductImageProtocol {
 protocol ProductImageProtocol {
     var imageData: Data? { get set }
 }
+
+extension CartListResponse: Equatable {
+    static func == (lhs: CartListResponse, rhs: CartListResponse) -> Bool {
+        return lhs == rhs
+    }
+}

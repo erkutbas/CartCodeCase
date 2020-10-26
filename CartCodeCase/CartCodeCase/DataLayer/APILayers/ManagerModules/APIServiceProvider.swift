@@ -47,35 +47,6 @@ class ApiServiceProvider<T: CodableDataProtocol>: URLRequestProtocol {
         }
     }
     
-    
-//    func asURLRequest() throws -> URLRequest {
-//        var url = try UtilityManager.returnBaseUrl(environment: .development).asURL()
-//
-//        if let path = path {
-//            url = url.appendingPathComponent(path)
-//        }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = method.rawValue
-//        request.headers = headers
-//        request.cachePolicy = .reloadIgnoringCacheData
-//
-//        return try encoding.encode(request, with: params)
-//
-//    }
-    
-//    // MARK: - Encoding -
-//    private var encoding: ParameterEncoder {
-//        switch method {
-//        case .post, .put:
-//            return JSONEncoding.
-//        case .get:
-//            return URLEncoding.queryString
-//        default:
-//            return URLEncoding.queryString
-//        }
-//    }
-    
     private var params: Parameters? {
         return data.asDictionary()
     }

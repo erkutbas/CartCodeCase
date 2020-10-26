@@ -12,14 +12,14 @@ enum Wireframes: GenericValueProtocol {
     typealias Value = BaseWireframe
     
     case main
-    case detail
+    case detail(DetailWireframeData)
     
     var value: BaseWireframe {
         switch self {
         case .main:
             return MainWireframe()
-        case .detail:
-            return DetailWireframe()
+        case .detail(let data):
+            return DetailWireframe(data: data)
         }
     }
     

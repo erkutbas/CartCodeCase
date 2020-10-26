@@ -60,6 +60,7 @@ class CoreDataManager {
             }
         }
     }
+    
     // MARK: - Core Data Fetch
     func fetch<T: NSManagedObject>(_ type: T.Type) -> [T] {
         do {
@@ -70,6 +71,22 @@ class CoreDataManager {
             debugPrint("Fetch for type: \(type) - error: \(error)")
         }
         return [T]()
+    }
+    
+    // MARK: - Core Data Fetch
+    func fetchWithPredicate<T: NSManagedObject>(_ type: T.Type, predicateKey: String, predicateValue: String) -> T? {
+        do {
+            let fetchRequest = T.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: predicateKey, predicateValue)
+
+            if let fetchedObjects = try context.fetch(fetchRequest) as? [T] {
+                return fetchedObjects.getElement(at: 0) ?? nil
+            }
+            
+        } catch {
+            debugPrint("Fetch for type: \(type) - error: \(error)")
+        }
+        return nil
     }
     
     // MARK: Core Data Delete

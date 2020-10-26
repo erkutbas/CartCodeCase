@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class CartOperationsCoreDataManager: CartOperationsCoreDataManagerInterface {
     
@@ -27,7 +28,7 @@ class CartOperationsCoreDataManager: CartOperationsCoreDataManagerInterface {
                 
                 object.productId = product.productID
                 object.name = product.name
-                object.image = product.imageData
+                object.imageUrl = product.image
                 
                 /*
                  core data set default values on some properties such as integer, boolean, double ...

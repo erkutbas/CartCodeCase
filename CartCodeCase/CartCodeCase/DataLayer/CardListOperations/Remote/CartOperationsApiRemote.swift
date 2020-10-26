@@ -27,5 +27,16 @@ class CartOperationsApiRemote: CartOperationsApiRemoteInterface {
         }
         
     }
+    
+    func getProductDetail(params: ProductDetailRequest, completion: @escaping (Result<ProductDetailResponse, ErrorResponse>) -> Void) {
+        
+        do {
+            let request = try serviceProvider.getProductDetailServiceModule(request: params).returnUrlRequest()
+            apiManager.executeRequest(urlRequest: request, completion: completion)
+        } catch let error {
+            print("error : \(error)")
+        }
+        
+    }
 
 }

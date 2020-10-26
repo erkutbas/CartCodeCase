@@ -14,3 +14,11 @@ extension String {
         return url
     }
 }
+
+extension String {
+    
+    func toLocalize() -> String{
+        return NSLocalizedString(self, comment: "")
+    }
+    
+}
