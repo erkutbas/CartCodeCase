@@ -21,3 +21,4 @@
 "cachedDataNotExistsSubtitle" = "This is the first time you are launching the app. There is no saved cart list data. Please try again later when wifi connected.";
 "cachedDataExistTitle" = "Information";
 "cachedDataExistSubtitle" = "There is no network connection. Device, however, has some saved cart list data.";
+"networkError" = "Something bad happened";

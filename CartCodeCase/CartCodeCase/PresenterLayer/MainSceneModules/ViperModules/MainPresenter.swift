@@ -47,9 +47,10 @@ final class MainPresenter {
     private func handleCartListResponse(with result: Result<CartListResponse, ErrorResponse>) {
         switch result {
         case .failure(let error):
-            print("cartList error : \(error)")
+            DispatchQueue.main.async { [weak self] in
+                self?.wireframe.displayWarning(controller: AlertControllerGenerator.networkError(error.serverResponse?.returnMessage ?? "").value, completion: nil)
+            }
         case .success(let data):
-            print("cartList data : \(data)")
             sendResponseToCoreData(response: data)
             formatter.setData(with: data)
             view.informViewToLoadData()
@@ -76,16 +77,12 @@ final class MainPresenter {
     private func subscribeNetworkManager() {
         networkManager.getNetworkManagerInstance().subscribeNetworkListener { [weak self](state) in
             
-            print("BURADAYIM 2")
-            
             switch state {
             case .offline:
-                print("offline")
                 DispatchQueue.main.async {
                     self?.checkCoreData()
                 }
             case .online:
-                print("online")
                 self?.getCartList()
                 self?.view.activateWarningView(with: nil)
             }
@@ -125,8 +122,6 @@ extension MainPresenter: MainPresenterInterface {
     
     func viewDidLoad() {
         subscribeNetworkManager()
-//        getCartList()
-        print("BURADAYIM 1")
     }
     
     func getNumberOfSection() -> Int {

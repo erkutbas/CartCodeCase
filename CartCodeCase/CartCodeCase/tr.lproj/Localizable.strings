@@ -21,3 +21,4 @@
 "cachedDataNotExistsSubtitle" = "Uygulamayı ilk defa kullanmaktasınız. Kayıtlı ürün listesi bulunmamaktadır. Lütfen internet bağlantısı kurulduktan sonra yeniden deneyiniz";
 "cachedDataExistTitle" = "Bilgilendirme";
 "cachedDataExistSubtitle" = "İnternet bağlantısı bulunmamaktadır. Cihazınızda kayıtlı ürünler listenecektir.";
+"networkError" = "Birşeyler ters gitti lütfen daha sonra yeniden deneyiniz";

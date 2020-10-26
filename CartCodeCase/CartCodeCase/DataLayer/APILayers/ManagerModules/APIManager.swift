@@ -36,12 +36,12 @@ class APIManager: APIManagerInterface {
     
     private func dataTaskHandler<R: BaseResponse>(_ data: Data?, _ response: URLResponse?, _ error: Error?, completion: @escaping (Result<R, ErrorResponse>) -> Void) {
         
-        if error != nil {
+        if let error = error {
             // completion failure
-            print("makasi : \(error)")
+            completion(.failure(ErrorResponse(serverResponse: ServerResponse(returnMessage: error.localizedDescription, returnCode: error._code), apiConnectionErrorType: .serverError(error._code))))
         }
         
-        //handleHTTPResponse(by: response, completion: completion)
+        handleHTTPResponse(by: response, completion: completion)
         
         if let data = data {
             
@@ -65,6 +65,14 @@ class APIManager: APIManagerInterface {
     private func handleHTTPResponse<R: BaseResponse>(by response: URLResponse?, completion: @escaping (Result<R, ErrorResponse>) -> Void) {
         guard let response = response as? HTTPURLResponse else {
             return
+        }
+        
+        switch response.statusCode {
+        case 200 ... 299:
+            print("success")
+        default:
+            print("failure")
+            completion(.failure(ErrorResponse(serverResponse: ServerResponse(returnMessage: LocalizableManager.networkError.value, returnCode: response.statusCode), apiConnectionErrorType: .serverError(response.statusCode))))
         }
         
     }

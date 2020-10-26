@@ -12,6 +12,7 @@ enum AlertControllerGenerator: GenericValueProtocol {
     
     case noNetwork(AlertControllerData)
     case savedData(AlertControllerData)
+    case networkError(String)
     
     var value: UIAlertController {
         switch self {
@@ -37,6 +38,14 @@ enum AlertControllerGenerator: GenericValueProtocol {
                 controller.addAction(action)
                 
             }
+            
+            return controller
+            
+        case .networkError(let errorMessage):
+            let controller = UIAlertController(title: WarningLocalizableManager.cachedDataExistTitle.value, message: errorMessage, preferredStyle: .alert)
+
+            let action = UIAlertAction(title: WarningLocalizableManager.okayButtonTitle.value, style: .default, handler: nil)
+            controller.addAction(action)
             
             return controller
             

@@ -16,6 +16,7 @@ enum LocalizableManager: GenericValueProtocol {
     case productDescription
     case productDescriptionDoesNotExist
     case productNameDoesNotExist
+    case networkError
     
     var value: String {
         switch self {
@@ -29,6 +30,8 @@ enum LocalizableManager: GenericValueProtocol {
             return "productDescriptionDoesNotExist".toLocalize()
         case .productNameDoesNotExist:
             return "productNameDoesNotExist".toLocalize()
+        case .networkError:
+            return "networkError".toLocalize()
         }
     }
 

@@ -13,7 +13,6 @@ class CompletableUseCase<Params>: BaseUseCase<Params, Completed> {
         generateUseCase(parameter: params) { [weak self](result) in
             // there is nothing to do
         }
-        
     }
     
     deinit {

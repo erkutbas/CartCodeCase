@@ -11,11 +11,11 @@ class SingleResponseUseCase<Params, T>: BaseUseCase<Params, T> {
     
     func execute(useCaseCallBack: UseCaseCallBack<T>, params: Params) {
         
-        generateUseCase(parameter: params) { [weak self](result) in
+        generateUseCase(parameter: params) { (result) in
             
             switch result {
             case .failure(let error):
-                self?.onErrorCondition(useCaseCallBack: useCaseCallBack, error: error)
+                self.onErrorCondition(useCaseCallBack: useCaseCallBack, error: error)
             case .success(let data):
                 useCaseCallBack.onSuccess(response: data)
             }
@@ -25,6 +25,7 @@ class SingleResponseUseCase<Params, T>: BaseUseCase<Params, T> {
     }
     
     private func onErrorCondition(useCaseCallBack: UseCaseCallBack<T>, error: Error) {
+        print("")
         guard let error = error as? ErrorResponse else { return }
         useCaseCallBack.onError(error: error)
     }

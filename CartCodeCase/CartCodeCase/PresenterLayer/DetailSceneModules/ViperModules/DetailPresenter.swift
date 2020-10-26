@@ -43,9 +43,7 @@ final class DetailPresenter {
         switch result {
         case .failure(let error):
             print("error : \(error)")
-            
         case .success(let data):
-            print(data)
             self?.formatter.setProductDetailResponse(data: data)
             self?.view.informViewToLoadData()
         }
