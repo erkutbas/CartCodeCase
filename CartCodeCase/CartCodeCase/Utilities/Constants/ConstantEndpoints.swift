@@ -21,7 +21,7 @@ struct ConstantEndpoints {
     // MARK: - Paths ... -
     enum Paths {
         case cartList
-        case cartItemDetail
+        case cartItemDetail(ProductDetailRequest)
         
         /*
          
@@ -35,8 +35,8 @@ struct ConstantEndpoints {
 
             case .cartList:
                 return "cart/list"
-            case .cartItemDetail:
-                return "cart/list"
+            case .cartItemDetail(let data):
+                return "cart/\(data.productId)/detail"
             }
         }
     }

@@ -19,7 +19,11 @@ class APIManager: APIManagerInterface {
     private var jsonDecoder = JSONDecoder()
     
     init() {
-        self.session = URLSession.shared
+        let config = URLSessionConfiguration.default
+        config.waitsForConnectivity = true
+        config.timeoutIntervalForResource = 300
+        config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        self.session = URLSession(configuration: config)
     }
     
     func executeRequest<R>(urlRequest: URLRequest, completion: @escaping (Result<R, ErrorResponse>) -> Void) where R : BaseResponse {
